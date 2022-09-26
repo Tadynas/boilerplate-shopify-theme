@@ -4,15 +4,16 @@
   "description": "Shopify Hello World Template",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently --kill-others \"yarn gulp watch\" \"shopify theme serve\""
+    "dev": "start yarn gulp dev && start shopify theme serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^7.4.0",
     "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.55.0"
-  }
+  },
+  "dependencies": {}
 }
