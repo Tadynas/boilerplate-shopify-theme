@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "header": {
+      "name": "Header",
+      "settings": {
+        "menu": {
+          "label": "Navigation Menu"
+        }
+      }
+    }
+  }
+}
