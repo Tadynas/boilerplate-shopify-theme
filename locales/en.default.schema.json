@@ -35,5 +35,37 @@
         }
       }
     }
+  },
+  "settings_schema": {
+    "social_links": {
+      "name": "Social Links",
+      "facebook": {
+        "label": "Facebook"
+      },
+      "twitter": {
+        "label": "Twitter"
+      },
+      "instagram": {
+        "label": "Instagram"
+      },
+      "tiktok": {
+        "label": "TikTok"
+      },
+      "youtube": {
+        "label": "YouTube"
+      },
+      "snapchat": {
+        "label": "Snapchat"
+      },
+      "tumblr": {
+        "label": "Tumblr"
+      },
+      "pinterest": {
+        "label": "Pinterest"
+      },
+      "vimeo": {
+        "label": "Vimeo"
+      }
+    }
   }
 }
