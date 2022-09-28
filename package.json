@@ -4,7 +4,7 @@
   "description": "Shopify Hello World Template",
   "main": "index.js",
   "scripts": {
-    "dev": "start yarn gulp dev && start shopify theme serve"
+    "dev": "yarn gulp dev"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,8 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-run": "^1.7.1",
     "gulp-sass": "^5.1.0",
     "sass": "^1.55.0"
   },

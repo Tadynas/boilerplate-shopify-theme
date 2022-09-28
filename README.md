@@ -1,1 +1,0 @@
-Shopify Hello World Template
