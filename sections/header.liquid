@@ -1,6 +1,17 @@
-{% for item in collection %}
-  
-{% endfor %}
+<div>
+  <!-- Store Logo/Name-->
+  {% if section.settings.logo_image %}
+    {{ section.settings.logo_image | image_url: width: section.settings.logo_width | image_tag:
+      alt: section.settings.logo_image.alt
+    }}
+  {% else %}
+    <h1>{{ shop.name }}</h1>
+  {% endif %}
+  <!-- Navigation -->
+  {% for link in section.settings.menu.links %}
+    <a href="{{ link.url }}">{{ link.title }}</a>
+  {% endfor %}
+</div>
 
 {% schema %}
 {
