@@ -34,6 +34,36 @@
           }
         }
       }
+    },
+    "announcement_bar": {
+      "name": "Announcement Bar",
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings": {
+            "text": {
+              "label": "Text"
+            },
+            "text_alignment": {
+              "label": "Text Alignment",
+              "options": {
+                "left": {
+                  "label": "Left"
+                },
+                "center": {
+                  "label": "Center"
+                },
+                "right": {
+                  "label": "Right"
+                }
+              }
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      }
     }
   },
   "settings_schema": {

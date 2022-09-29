@@ -13,43 +13,43 @@
 
 {% schema %}
 {
-  "name": "Announcement Bar",
+  "name": "t:sections.announcement_bar.name",
   "max_blocks": 3,
   "blocks": [
     {
       "type": "announcement",
-      "name": "Announcement",
+      "name": "t:sections.announcement_bar.blocks.announcement.name",
       "settings": [
         {
           "type": "text",
           "id": "text",
           "default": "Welcome to our store",
-          "label": "Text"          
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.text.label"          
         },
         {
           "type": "select",
           "id": "text_alignment",
           "default": "center",
-          "label": "Text Alignment",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.label",
           "options": [
             {
               "value": "left",
-              "label": "Left"
+              "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.options.left.label"
             },
             {
               "value": "center",
-              "label": "Center"
+              "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.options.center.label"
             },
             {
               "value": "right",
-              "label": "Right"
+              "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.options.right.label"
             }
           ]
         },
         {
           "type": "url",
           "id": "link",
-          "label": "Link"
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.link.label"
         }
       ]
     }
