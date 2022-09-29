@@ -1,0 +1,65 @@
+<div>
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'announcement' %}
+        {% if block.settings.link %}
+          <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
+        {% else %}
+          <p>{{ block.settings.text | escape }}</p>
+        {% endif %}
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.announcement_bar.name",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement_bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.text.label"          
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "default": "center",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.label",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.options.left.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.options.center.label"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.announcement_bar.blocks.announcement.settings.text_alignment.options.right.label"
+            }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}
