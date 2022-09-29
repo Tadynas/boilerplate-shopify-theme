@@ -1,17 +1,36 @@
-<div>
-  <!-- Store Logo/Name-->
-  {% if section.settings.logo_image %}
-    {{ section.settings.logo_image | image_url: width: section.settings.logo_width | image_tag:
-      alt: section.settings.logo_image.alt
-    }}
-  {% else %}
-    <h1>{{ shop.name }}</h1>
-  {% endif %}
-  <!-- Navigation -->
-  {% for link in section.settings.menu.links %}
-    <a href="{{ link.url }}">{{ link.title }}</a>
-  {% endfor %}
-</div>
+<header class="header header--{{ section.settings.logo_position_desktop }}">
+  <div class="container">
+    <div class="header__container">
+      <!-- Store Logo/Name-->
+      {% if section.settings.logo_image %}
+        <div class="header__image">
+          {{ section.settings.logo_image | image_url: width: section.settings.logo_width | image_tag:
+            alt: section.settings.logo_image.alt
+          }}
+        </div>
+      {% else %}
+        <h1>{{ shop.name }}</h1>
+      {% endif %}
+      <!-- Navigation -->
+      <nav class="header__nav">
+        {% for link in section.settings.menu.links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+
+      <div class="header__actions">
+        <div>Search</div>
+        <div>Cart</div>
+      </div>
+
+      <div class="burger-menu">
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
+      </div>
+    </div>
+  </div>
+</header>
 
 {% schema %}
 {

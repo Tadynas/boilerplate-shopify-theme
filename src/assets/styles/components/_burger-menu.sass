@@ -1,0 +1,26 @@
+.burger-menu
+  @include flex($dir: column, $center: true)
+  width: 4.8rem
+  height: 4.8rem
+  margin-right: -1.5rem
+  margin-left: -1.5rem
+  @include desktop
+    display: none
+  &.active
+    .burger-menu__line
+      &:nth-child(1)
+        transform: rotate(45deg) translate(0.425rem, 0.425rem)
+      &:nth-child(2)
+        opacity: 0
+      &:nth-child(3)
+        transform: rotate(-45deg) translate(0.425rem, -0.425rem)
+
+  &__line
+    width: 1.8rem
+    height: .2rem
+    margin-bottom: .3rem
+    background-color: $black
+    border-radius: 6.4rem
+    @include transition()
+    &:last-child
+      margin-bottom: 0

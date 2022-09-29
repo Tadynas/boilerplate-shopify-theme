@@ -1,0 +1,61 @@
+@mixin transition($prop: all, $duration: .25s, $delay: 0s)
+  transition: $prop $duration ease-in-out $delay
+  @if ($prop != all)
+    will-change: $prop
+
+@mixin flex($dir: row, $align: stretch, $justify: flex-start, $grow: 0, $center: false, $centerX: false, $centerY: false, $space: false, $wrap: nowrap, $single: false, $rowGap: 0, $colGap: 0)
+  display: flex
+  @if ($single == false)
+    flex-direction: $dir
+    flex-wrap: $wrap
+    flex-grow: $grow
+    row-gap: calc( $rowGap / 10 ) + rem
+    column-gap: calc( $colGap / 10 ) + rem
+    @if ($center)
+      align-items: center
+      justify-content: center
+    @else if ($centerX)
+      align-items: center
+    @else if ($centerY)
+      justify-content: center
+    @else if ($space)
+      align-items: center
+      justify-content: space-between
+    @else 
+      align-items: $align
+      justify-content: $justify
+
+@mixin circle($flex: true, $size, $color: "", $strict: true)
+  @if ($flex == true)
+    @include flex($center: true)
+  @if ($strict == true)
+    min-width: calc($size / 10) + rem
+    min-height: calc($size / 10) + rem
+    max-width: calc($size / 10) + rem
+    max-height: calc($size / 10) + rem
+  @else 
+    width: calc($size / 10) + rem
+    height: calc($size / 10) + rem
+  border-radius: 50%
+  @if ($color != "")
+    background-color: $color
+
+@mixin columnCount($big, $small)
+  width: calc(( 6.4rem * $big ) + ( 3.2rem * $small ))
+
+@mixin bg($url)
+  background-image: url($url)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: contain
+
+@mixin fontSize($size, $lineHeight: 0)
+  font-size: calc($size / 10) + rem
+  @if ($lineHeight == 0)
+    line-height: calc(($size + 8) / 10) + rem
+  @else 
+    line-height: calc($lineHeight / 10) + rem
+
+@mixin desktop
+  @media (min-width: 1120px) 
+    @content

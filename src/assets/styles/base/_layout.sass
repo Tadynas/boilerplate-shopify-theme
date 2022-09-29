@@ -1,0 +1,31 @@
+@include desktop
+  .row
+    @include flex($justify: space-between)
+
+    &--content-center
+      justify-content: center
+
+    &--center
+      align-items: center
+    
+    &--column
+      flex-direction: column
+    
+    &--bottom
+      align-items: flex-end
+
+  @for $i from 1 through 12
+    .lg-#{$i}-#{$i - 1}
+      @include columnCount(#{$i}, #{$i - 1})
+
+  @for $i from 1 through 12
+    .lg-#{$i}-#{$i}
+      @include columnCount(#{$i}, #{$i})
+
+  @for $i from 1 through 12
+    .lg-#{$i - 1}-#{$i}
+      @include columnCount(#{$i - 1}, #{$i})
+  
+  @for $i from 1 through 12
+    .lg-6-#{$i}
+      @include columnCount(6, #{$i})

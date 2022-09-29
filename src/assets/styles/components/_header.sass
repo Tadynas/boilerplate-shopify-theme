@@ -1,0 +1,118 @@
+.header
+  min-height: 6.4rem
+
+  &--middle-left
+    .header__container
+      @include desktop
+        @include flex($centerX: true)
+    
+    .header__nav
+      @include desktop
+        padding: 0 3.2rem
+        width: 100%
+
+    .header__actions
+      @include desktop
+        @include flex($centerX: true, $colGap: 32)
+    
+    .header__image
+      @include desktop
+        order: 0
+
+  &--middle-center
+    .header__container
+      @include flex($centerX: true)
+    
+    .header__nav
+      padding: 0 3.2rem
+      order: 1
+      flex-grow: 2
+
+    .header__actions
+      @include flex($align: center, $justify: flex-end, $colGap: 32, $grow: 2)
+      order: 3
+    
+    .header__image
+      order: 2
+      flex-grow: 2
+      justify-content: center
+  
+  &--top-left
+    .header__container
+      @include desktop
+        @include flex($space: true, $wrap: wrap)
+
+    .header__nav
+      @include desktop
+        padding-top: 3.2rem
+        margin: 0 -1.6rem
+        width: 100%
+        order: 3
+
+    .header__actions
+      @include desktop
+        order: 2
+        @include flex($centerX: true, $colGap: 32)
+
+    .header__image
+      @include desktop
+        order: 0
+
+  &--top-center
+    .header__container
+      @include desktop
+        @include flex($center: true, $dir: column)
+        padding: 3.2rem 0
+
+    .header__nav
+      @include desktop
+        padding-top: 3.2rem
+        width: 100%
+        text-align: center
+
+    .header__actions
+      @include desktop
+        @include flex($centerX: true, $colGap: 32)
+        position: absolute
+        top: 5.2rem
+        right: 0
+    
+    .header__image
+      @include desktop
+        order: 0
+  
+  &__container
+    @include flex($space: true)
+    position: relative
+    padding: 1.6rem 0
+  
+  &__nav
+    @include flex($dir: column, $align: flex-start)
+    padding: 6.4rem 1.6rem
+    position: fixed
+    top: 8.5rem
+    left: 0
+    background-color: beige
+    width: 90%
+    height: 100%
+    @include desktop
+      display: block
+      position: static
+      background: none
+      width: auto
+      height: auto
+      padding: 0
+    a
+      display: inline-block
+      padding: 1.6rem
+
+  &__image
+    display: flex
+    order: 2
+  
+  &__actions
+    @include flex($centerX: true, $colGap: 32)
+    order: 3
+  
+  .burger-menu
+    order: 1
