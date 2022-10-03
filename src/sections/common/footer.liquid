@@ -6,15 +6,19 @@
           {% when 'navigation' %}
             {% if block.settings.heading %}
               <div class="footer__item">
-                <h4 class="footer__item__title">{{ block.settings.heading }}</h4>
-                <p>{{ block.settings.menu }}</p>
+                <div {{ block.shopify_attributes }}>
+                  <h4 class="footer__item__title">{{ block.settings.heading }}</h4>
+                  <p>{{ block.settings.menu }}</p>
+                </div>
               </div>
             {% endif %}
           {% when 'text' %}
             {% if block.settings.heading %}
               <div class="footer__item">
-                <h4 class="footer__item__title">{{ block.settings.heading }}</h4>
-                {{ block.settings.content }}
+                <div {{ block.shopify_attributes }}>
+                  <h4 class="footer__item__title">{{ block.settings.heading }}</h4>
+                  {{ block.settings.content }}
+                </div>
               </div>
             {% endif %}
         {% endcase %}
