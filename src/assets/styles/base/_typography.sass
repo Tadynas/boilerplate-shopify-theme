@@ -3,5 +3,12 @@ html
 
 body
   font-family: sans-serif
-  @include fontSize(16)
+  @include fontSize(14)
   color: $black
+  @include desktop
+    @include fontSize(16)
+
+h3
+  @include fontSize(20)
+  @include desktop
+    @include fontSize(24)
