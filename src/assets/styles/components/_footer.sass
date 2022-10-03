@@ -4,7 +4,7 @@
     padding: 6.4rem 0
 
   &__container
-    @include flex($space: true, $wrap: wrap, $colGap: 16, $rowGap: 24)
+    @include flex($justify: space-between, $wrap: wrap, $colGap: 24, $rowGap: 24)
     margin-bottom: 4.8rem
     @include desktop
       margin-bottom: 6.4rem
@@ -14,7 +14,7 @@
     width: 100%
     @include desktop
       flex-grow: 2
-      width: calc(30% - 1.6rem)
+      width: calc(30% - 2.4rem)
 
     &__title
       margin-bottom: 1.6rem

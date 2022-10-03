@@ -8,7 +8,9 @@
               <div class="footer__item">
                 <div {{ block.shopify_attributes }}>
                   <h4 class="footer__item__title">{{ block.settings.heading }}</h4>
-                  <p>{{ block.settings.menu }}</p>
+                  {% for link in block.settings.menu.links %}
+                    <p><a href="{{ link.url }}">{{ link.title }}</a></p>
+                  {% endfor %}
                 </div>
               </div>
             {% endif %}
