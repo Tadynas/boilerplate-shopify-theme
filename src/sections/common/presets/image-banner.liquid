@@ -1,0 +1,50 @@
+{% schema %}
+  {
+    "name": "Image Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Image"
+      },
+      {
+        "type": "range",
+        "id": "overlay_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "default": 0,
+        "unit": "%",
+        "label": "Overlay Opacity"
+      },
+      {
+        "type": "select",
+        "id": "height",
+        "default": "medium",
+        "label": "Height",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "fullscreen",
+            "label": "Fullscreen"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -3,11 +3,13 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'announcement' %}
-          {% if block.settings.link %}
-            <p class="announcement announcement--link announcement--{{block.settings.text_alignment}}"><a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a></p>
-          {% else %}
-            <p class="announcement announcement--{{block.settings.text_alignment}}">{{ block.settings.text | escape }}</p>
-          {% endif %}
+          <div {{ block.shopify_attributes }}>
+            {% if block.settings.link %}
+              <p class="announcement announcement--link announcement--{{block.settings.text_alignment}}"><a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a></p>
+            {% else %}
+              <p class="announcement announcement--{{block.settings.text_alignment}}">{{ block.settings.text | escape }}</p>
+            {% endif %}
+          </div>
       {% endcase %}
     {% endfor %}
   </div>
