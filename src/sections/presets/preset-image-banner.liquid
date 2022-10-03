@@ -1,0 +1,117 @@
+<div>
+</div>
+
+{% schema %}
+  {
+    "name": "Image Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Image"
+      },
+      {
+        "type": "range",
+        "id": "overlay_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "default": 0,
+        "unit": "%",
+        "label": "Overlay Opacity"
+      },
+      {
+        "type": "select",
+        "id": "height",
+        "default": "medium",
+        "label": "Height",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "fullscreen",
+            "label": "Fullscreen"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "content_position",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top Left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top Center"
+          },
+          {
+            "value": "top-right",
+            "label": "Top Right"
+          },
+          {
+            "value": "middle-left",
+            "label": "Middle Left"
+          },
+          {
+            "value": "middle-center",
+            "label": "Middle Center"
+          },
+          {
+            "value": "middle-right",
+            "label": "Middle Right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom Left"
+          },
+          {
+            "value": "bottom-center",
+            "label": "Bottom Center"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom Right"
+          }
+        ],
+        "default": "middle-center",
+        "label": "Content Position"
+      },
+      {
+        "type": "select",
+        "id": "content_alignment",
+        "default": "center",
+        "label": "Content Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
