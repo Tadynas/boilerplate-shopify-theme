@@ -1,0 +1,81 @@
+{% schema %}
+  {
+    "name": "t:sections.footer.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.footer.settings.email_signup.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_email_signup",
+        "default": true,
+        "label": "t:sections.footer.settings.email_signup.show_email_signup.label"
+      },
+      {
+        "type": "text",
+        "id": "email_heading",
+        "default": "Subscribe to our emails",
+        "label": "t:sections.global.text.heading.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.global.socials.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_socials",
+        "default": true,
+        "label": "t:sections.global.socials.show_socials.label"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "navigation",
+        "name": "t:sections.global.menu.label",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Quick Links",
+            "label": "t:sections.global.text.heading.label"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "default": "footer",
+            "label": "t:sections.global.menu.label"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "t:sections.global.text.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "About Us",
+            "label": "t:sections.global.text.heading.label"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+            "label": "t:sections.global.text.content.label"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "navigation"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  }
+{% endschema %}

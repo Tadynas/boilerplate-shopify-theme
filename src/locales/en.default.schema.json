@@ -1,11 +1,28 @@
 {
   "sections": {
+    "global": {
+      "socials": {
+        "content": "Socials",
+        "show_socials": {
+          "label": "Show Social Media Icons"
+        }   
+      },
+      "menu": {
+        "label": "Navigation Menu"
+      },
+      "text": {
+        "name": "Text",
+        "heading": {
+          "label": "Heading"
+        },
+        "content": {
+          "label": "Content"
+        }
+      }
+    },
     "header": {
       "name": "Header",
       "settings": {
-        "menu": {
-          "label": "Navigation Menu"
-        },
         "logo": {
           "content": "Logo",
           "image": {
@@ -30,7 +47,7 @@
         "mobile": {
           "content": "Mobile",
           "show_socials": {
-            "label": "Show Socials"
+            "label": "Show Social Media Icons"
           }
         }
       }
@@ -61,6 +78,17 @@
             "link": {
               "label": "Link"
             }
+          }
+        }
+      }
+    },
+    "footer": {
+      "name": "Footer",
+      "settings": {
+        "email_signup": {
+          "content": "Email Signup",
+          "show_email_signup": {
+            "label": "Show Email Signup"
           }
         }
       }

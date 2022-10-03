@@ -2,16 +2,16 @@
   <div class="container">
     <div class="header__container">
       <!-- Store Logo/Name-->
-      {% if section.settings.logo_image %}
-        <div class="header__image">
+      <div class="header__image">
+        {% if section.settings.logo_image %}
           {{ section.settings.logo_image | image_url: width: section.settings.logo_width | image_tag:
             alt: section.settings.logo_image.alt
           }}
-        </div>
-      {% else %}
-        <h1>{{ shop.name }}</h1>
-      {% endif %}
-      <!-- Navigation -->
+        {% else %}
+          <h1>{{ shop.name }}</h1>
+        {% endif %}
+      </div>
+    <!-- Navigation -->
       <nav class="header__nav">
         {% for link in section.settings.menu.links %}
           <a href="{{ link.url }}">{{ link.title }}</a>
@@ -40,7 +40,7 @@
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
-      "label": "t:sections.header.settings.menu.label" 
+      "label": "t:sections.global.menu.label" 
     },
     {
       "type": "header",
@@ -119,7 +119,7 @@
       "type": "checkbox",
       "id": "show_socials",
       "default": true,
-      "label": "t:sections.header.settings.mobile.show_socials.label"
+      "label": "t:sections.global.socials.show_socials.label"
     }
   ]
 }
