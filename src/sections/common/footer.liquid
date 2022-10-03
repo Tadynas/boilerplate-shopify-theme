@@ -1,3 +1,43 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__container footer__container--{{ section.blocks.size }}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'navigation' %}
+            {% if block.settings.heading %}
+              <div class="footer__item">
+                <h4 class="footer__item__title">{{ block.settings.heading }}</h4>
+                <p>{{ block.settings.menu }}</p>
+              </div>
+            {% endif %}
+          {% when 'text' %}
+            {% if block.settings.heading %}
+              <div class="footer__item">
+                <h4 class="footer__item__title">{{ block.settings.heading }}</h4>
+                {{ block.settings.content }}
+              </div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+    <div class="footer__newsletter">
+      {% if section.settings.show_email_signup %}
+        {% if section.settings.email_heading %}
+          <p class="footer__newsletter__title">{{ section.settings.email_heading }}</p>
+        {% endif %}
+
+        <form class="form">
+          <div class="form__input">
+            <input type="email" placeholder="Email" required>
+            <button class="form__button">Send</button>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
 {% schema %}
   {
     "name": "t:sections.footer.name",
