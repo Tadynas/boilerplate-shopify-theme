@@ -1,14 +1,16 @@
 <div>
-  {% for block in section.blocks %}
-    {% case block.type %}
-      {% when 'announcement' %}
-        {% if block.settings.link %}
-          <a href="{{ block.settings.link }}" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</a>
-        {% else %}
-          <p {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</p>
-        {% endif %}
-    {% endcase %}
-  {% endfor %}
+  <div class="container">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'announcement' %}
+          {% if block.settings.link %}
+            <p class="announcement announcement--link announcement--{{block.settings.text_alignment}}"><a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a></p>
+          {% else %}
+            <p class="announcement announcement--{{block.settings.text_alignment}}">{{ block.settings.text | escape }}</p>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}
