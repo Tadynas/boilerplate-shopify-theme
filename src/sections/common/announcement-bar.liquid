@@ -5,7 +5,7 @@
         {% if block.settings.link %}
           <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
         {% else %}
-          <p>{{ block.settings.text | escape }}</p>
+          <p class="announcement">{{ block.settings.text | escape }}</p>
         {% endif %}
     {% endcase %}
   {% endfor %}
