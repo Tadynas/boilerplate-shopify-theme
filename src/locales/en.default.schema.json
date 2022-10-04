@@ -7,9 +7,6 @@
           "label": "Show Social Media Icons"
         }   
       },
-      "menu": {
-        "label": "Navigation Menu"
-      },
       "text": {
         "name": "Text",
         "heading": {
@@ -17,6 +14,14 @@
         },
         "content": {
           "label": "Content"
+        }
+      },
+      "element": {
+        "button": {
+          "label": "Button"
+        },
+        "menu": {
+          "label": "Navigation Menu"
         }
       }
     },
@@ -77,6 +82,54 @@
             },
             "link": {
               "label": "Link"
+            }
+          }
+        }
+      }
+    },
+    "image_banner": {
+      "name": "Image Banner",
+      "settings": {
+        "image_1": {
+          "label": "First Image"
+        },
+        "image_2": {
+          "label": "Second Image"
+        },
+        "overlay_opacity": {
+          "label": "Overlay Opacity"
+        },
+        "height": {
+          "label": "Height"
+        },
+        "content_position": {
+          "label": "Content Position"
+        },
+        "content_alignment": {
+          "label": "Content Alignment"
+        }
+      },
+      "blocks": {
+        "content": {
+          "settings": {
+            "text": {
+              "label": "Text"
+            },
+            "text_size": {
+              "label": "Text Size"
+            }
+          }
+        },
+        "button": {
+          "settings": {
+            "label": {
+              "label": "Label"
+            },
+            "link": {
+              "label": "Link"
+            },
+            "fill": {
+              "label": "Fill"
             }
           }
         }
