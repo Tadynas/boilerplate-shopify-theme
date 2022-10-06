@@ -195,6 +195,23 @@
     "rich_text": {
       "name": "Rich Text"
     },
+    "video": {
+      "name": "Video",
+      "settings": {
+        "cover_image": {
+          "label": "Cover Image"
+        },
+        "url": {
+          "label": "URL"
+        },
+        "alt": {
+          "label": "Video Alt Text"
+        },
+        "full_width": {
+          "label": "Full Width"
+        }
+      }
+    },
     "footer": {
       "name": "Footer",
       "settings": {
