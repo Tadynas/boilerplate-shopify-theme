@@ -18,10 +18,90 @@
       },
       "element": {
         "button": {
-          "label": "Button"
+          "label": "Button",
+          "settings": {
+            "label": {
+              "label": "Label"
+            },
+            "link": {
+              "label": "Link"
+            },
+            "fill": {
+              "label": "Fill"
+            }
+          }
         },
         "menu": {
           "label": "Navigation Menu"
+        }
+      },
+      "size": {
+        "text": {
+          "label": "Text Size"
+        },
+        "small": {
+          "label": "Small"
+        },
+        "medium": {
+          "label": "Medium"
+        },
+        "large": {
+          "label": "Large"
+        }
+      },
+      "position": {
+        "content": {
+          "label": "Content Position"
+        },
+        "top_left": {
+          "label": "Top Left"
+        },
+        "top_center": {
+          "label": "Top Center"
+        },
+        "top_right": {
+          "label": "Top Right"
+        },
+        "middle_left": {
+          "label": "Middle Left"
+        },
+        "middle_center": {
+          "label": "Middle Center"
+        },
+        "middle_right": {
+          "label": "Middle Right"
+        },
+        "bottom_left": {
+          "label": "Bottom Left"
+        },
+        "bottom_center": {
+          "label": "Bottom Center"
+        },
+        "bottom_right": {
+          "label": "Bottom Right"
+        },
+        "left": {
+          "label": "Left"
+        },
+        "center": {
+          "label": "Center"
+        },
+        "right": {
+          "label": "Right"
+        }
+      },
+      "alignment": {
+        "content": {
+          "label": "Content Alignment"
+        },
+        "left": {
+          "label": "Left"
+        },
+        "center": {
+          "label": "Center"
+        },
+        "right": {
+          "label": "Right"
         }
       }
     },
@@ -100,40 +180,20 @@
           "label": "Overlay Opacity"
         },
         "height": {
-          "label": "Height"
-        },
-        "content_position": {
-          "label": "Content Position"
-        },
-        "content_alignment": {
-          "label": "Content Alignment"
-        }
-      },
-      "blocks": {
-        "content": {
-          "settings": {
-            "text": {
-              "label": "Text"
+          "label": "Height",
+          "options": {
+            "default": {
+              "label": "Default"
             },
-            "text_size": {
-              "label": "Text Size"
-            }
-          }
-        },
-        "button": {
-          "settings": {
-            "label": {
-              "label": "Label"
-            },
-            "link": {
-              "label": "Link"
-            },
-            "fill": {
-              "label": "Fill"
+            "fullscreen": {
+              "label": "Fullscreen"
             }
           }
         }
       }
+    },
+    "rich_text": {
+      "name": "Rich Text"
     },
     "footer": {
       "name": "Footer",
