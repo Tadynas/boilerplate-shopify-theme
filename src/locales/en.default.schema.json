@@ -33,11 +33,17 @@
         },
         "menu": {
           "label": "Navigation Menu"
+        },
+        "image": {
+          "label": "Image"
         }
       },
       "size": {
         "text": {
           "label": "Text Size"
+        },
+        "heading": {
+          "label": "Heading Size"
         },
         "small": {
           "label": "Small"
@@ -94,6 +100,9 @@
         "content": {
           "label": "Content Alignment"
         },
+        "column": {
+          "label": "Column Alignment"
+        },
         "left": {
           "label": "Left"
         },
@@ -110,9 +119,6 @@
       "settings": {
         "logo": {
           "content": "Logo",
-          "image": {
-            "label": "Image"
-          },
           "width": {
             "label": "Width"
           },
@@ -209,6 +215,30 @@
         },
         "full_width": {
           "label": "Full Width"
+        }
+      }
+    },
+    "multicolumn": {
+      "name": "Multicolumn",
+      "settings": {
+        "columns": {
+          "content": "Columns"
+        },
+        "number_of_columns": {
+          "label": "Number of Columns"
+        },
+        "enable_slider": {
+          "label": "Enable Slider"
+        }
+      },
+      "blocks": {
+        "column": {
+          "name": "Column",
+          "settings": {
+            "link_button": {
+              "content": "Link Button"
+            }
+          }
         }
       }
     },
