@@ -1,3 +1,50 @@
+<section class="collapsible">
+  <div class="container">
+    {% if section.settings.heading %}
+      <h1 class="collapsible__title h1--{{section.settings.heading_size}}">{{ section.settings.heading }}</h1>
+    {% endif %}
+
+    <div class="collapsible__wrapper collapsible__wrapper--{{ section.settings.layout }}">
+      <div class="collapsible__content">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'collapsible_row' %}
+
+              {% if forloop.first %}
+                {% if section.settings.open_first_row %}
+                  {% assign collapsibleRowClassName = "collapsible__content__row--first-show" %}
+                {% endif %}
+              {% else %}
+                {% assign collapsibleRowClassName = "" %}
+              {% endif %}
+
+              <div class="collapsible__content__row {{ collapsibleRowClassName }}">
+                {% if block.settings.heading %}
+                  <div class="collapsible__content__row__title">
+                    <h4>{{block.settings.heading}}</h4>
+                    <div>+</div>
+                  </div>
+                {% endif %}
+                {% if block.settings.content %}
+                  <p class="collapsible__content__row__content">{{block.settings.content}}</p>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+  
+      <div class="collapsible__image collapsible__image--{{ section.settings.height }}">
+        {% if section.settings.image %}
+          {{ section.settings.image | image_url: width: nil | image_tag:
+            alt: section.settings.image.alt
+          }}
+        {% endif %}
+      </div>
+    </div>
+    
+  </div>
+</section>
+
 {% schema %}
   {
     "name": "t:sections.collapsible_content.name",

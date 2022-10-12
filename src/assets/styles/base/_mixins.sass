@@ -56,6 +56,6 @@
   @else 
     line-height: calc($lineHeight / 10) + rem
 
-@mixin desktop
-  @media (min-width: 1120px) 
+@mixin desktop($size: 1120)
+  @media (min-width: $size + "px") 
     @content
