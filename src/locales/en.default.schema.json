@@ -45,6 +45,9 @@
         "heading": {
           "label": "Heading Size"
         },
+        "default": {
+          "label": "Default"
+        },
         "small": {
           "label": "Small"
         },
@@ -239,6 +242,33 @@
               "content": "Link Button"
             }
           }
+        }
+      }
+    },
+    "collapsible_content": {
+      "name": "Collapsible Content",
+      "settings": {
+        "open_first_row": {
+          "label": "Open First Row"
+        },
+        "image_layout": {
+          "content": "Image Layout"
+        },
+        "layout": {
+          "label": "Layout",
+          "options": {
+            "image_first": {
+              "label": "Image First"
+            },
+            "image_second": {
+              "label": "Image Second"
+            }
+          }
+        }
+      },
+      "blocks": {
+        "collapsible_row": {
+          "name": "Collapsible Row"
         }
       }
     },

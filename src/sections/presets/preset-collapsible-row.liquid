@@ -1,0 +1,107 @@
+{% schema %}
+  {
+    "name": "t:sections.collapsible_content.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "t:sections.global.text.heading.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "default": "medium",
+        "label": "t:sections.global.size.heading.label",
+        "options": [
+          {
+            "value": "small",
+            "label": "t:sections.global.size.small.label"
+          },
+          {
+            "value": "medium",
+            "label": "t:sections.global.size.medium.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.global.size.large.label"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "open_first_row",
+        "label": "t:sections.collapsible_content.settings.open_first_row.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.collapsible_content.settings.image_layout.content"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.global.element.image.label"
+      },
+      {
+        "type": "select",
+        "id": "height",
+        "default": "medium",
+        "label": "t:sections.image_banner.settings.height.label",
+        "options": [
+          {
+            "value": "default",
+            "label": "t:sections.global.size.default.label"
+          },
+          {
+            "value": "medium",
+            "label": "t:sections.global.size.medium.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.global.size.large.label"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "default": "image_second",
+        "label": "t:sections.collapsible_content.settings.layout.label",
+        "options": [
+          {
+            "value": "image_first",
+            "label": "t:sections.collapsible_content.settings.layout.options.image_first.label"
+          },
+          {
+            "value": "image_second",
+            "label": "t:sections.collapsible_content.settings.layout.options.image_second.label"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collapsible_row",
+        "name": "t:sections.collapsible_content.blocks.collapsible_row.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Heading",
+            "label": "t:sections.global.text.heading.label"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "label": "t:sections.global.text.content.label"
+          }
+        ] 
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.collapsible_content.name"
+      }
+    ]
+  }
+{% endschema %}
