@@ -5,7 +5,10 @@
     margin-bottom: 2.4rem
 
   &__wrapper
-    @include flex($align: flex-start, $colGap: 32)
+    @include flex($dir: column, $align: flex-start, $rowGap: 32)
+    @include desktop
+      flex-direction: row
+      column-gap: 3.2rem
 
     &--image_first
       .collapsible__content
@@ -26,19 +29,24 @@
         margin-bottom: .8rem
   
   &__image
-    width: 50%
+    width: 100%
+    @include desktop
+      width: 50%
+
+    &--large, &--medium
+      img
+        @include desktop
+          object-fit: cover
 
     &--large
-      height: 60rem
-      min-width: 50rem
-      img
-        object-fit: cover
-
+      @include desktop
+        height: 60rem
+        min-width: 50rem
+        
     &--medium
-      height: 50rem
-      min-width: 40rem
-      img
-        object-fit: cover
+      @include desktop
+        height: 50rem
+        min-width: 40rem
 
     img
       width: 100%
