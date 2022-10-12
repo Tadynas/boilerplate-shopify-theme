@@ -1,0 +1,38 @@
+{% schema %}
+  {
+    "name": "t:sections.contact_form.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Contact Form",
+        "label": "t:sections.global.text.heading.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "default": "medium",
+        "label": "t:sections.global.size.heading.label",
+        "options": [
+          {
+            "value": "small",
+            "label": "t:sections.global.size.small.label"
+          },
+          {
+            "value": "medium",
+            "label": "t:sections.global.size.medium.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.global.size.large.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.contact_form.name"
+      }
+    ]
+  }
+{% endschema %}
