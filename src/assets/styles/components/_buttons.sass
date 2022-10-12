@@ -1,3 +1,7 @@
+a
+  &.button
+    @include flex($center: true)
+
 .button
   display: inline-block
   @include fontSize(16, normal)
@@ -16,3 +20,13 @@
   &--black
     background-color: $black
     color: white
+  
+  &--white
+    background-color: white
+    color: $black
+  
+  &--white-outline
+    border: .1rem solid white
+  
+  &-group
+    @include flex($colGap: 16)
