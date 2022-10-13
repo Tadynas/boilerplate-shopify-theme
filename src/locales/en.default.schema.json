@@ -283,6 +283,14 @@
         }
       }
     },
+    "email_signup": {
+      "name": "Email Signup",
+      "blocks": {
+        "email_form": {
+          "name": "Email Form"
+        }
+      }
+    },
     "footer": {
       "name": "Footer",
       "settings": {

@@ -1,0 +1,77 @@
+<div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.email_signup.name",
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "t:sections.global.text.heading.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "default": "Shop Now",
+            "label": "t:sections.global.text.name"
+          },
+          {
+            "type": "select",
+            "id": "text_size",
+            "default": "medium",
+            "label": "t:sections.global.size.text.label",
+            "options": [
+              {
+                "value": "small",
+                "label": "t:sections.global.size.small.label"
+              },
+              {
+                "value": "medium",
+                "label": "t:sections.global.size.medium.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.global.size.large.label"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name": "t:sections.global.text.content.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "default": "<p>Only today! Get best deals by purchasing from our new collection</p>",
+            "label": "t:sections.global.text.name"
+          }
+        ]
+      },
+      {
+        "type": "email_form",
+        "name": "t:sections.email_signup.blocks.email_form.name",
+        "limit": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.email_signup.name",
+        "blocks": [
+          {
+            "type": "heading"
+          },
+          {
+            "type": "content"
+          },
+          {
+            "type": "email_form"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
