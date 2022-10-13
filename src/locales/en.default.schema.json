@@ -35,7 +35,26 @@
           "label": "Navigation Menu"
         },
         "image": {
-          "label": "Image"
+          "label": "Image",
+          "settings": {
+            "height": {
+              "label": "Height"
+            },
+            "width": {
+              "label": "Width"
+            },
+            "layout": {
+              "label": "Layout",
+              "options": {
+                "image_first": {
+                  "label": "Image First"
+                },
+                "image_second": {
+                  "label": "Image Second"
+                }
+              }
+            }
+          }
         }
       },
       "size": {
@@ -62,6 +81,9 @@
         "content": {
           "label": "Content Position"
         },
+        "top": {
+          "label": "Top"
+        },
         "top_left": {
           "label": "Top Left"
         },
@@ -71,6 +93,9 @@
         "top_right": {
           "label": "Top Right"
         },
+        "middle": {
+          "label": "Middle"
+        },
         "middle_left": {
           "label": "Middle Left"
         },
@@ -79,6 +104,9 @@
         },
         "middle_right": {
           "label": "Middle Right"
+        },
+        "bottom": {
+          "label": "Bottom"
         },
         "bottom_left": {
           "label": "Bottom Left"
@@ -189,11 +217,7 @@
           "label": "Overlay Opacity"
         },
         "height": {
-          "label": "Height",
           "options": {
-            "default": {
-              "label": "Default"
-            },
             "fullscreen": {
               "label": "Fullscreen"
             }
@@ -290,6 +314,9 @@
           "name": "Email Form"
         }
       }
+    },
+    "image_with_text": {
+      "name": "Image With Text"
     },
     "footer": {
       "name": "Footer",
