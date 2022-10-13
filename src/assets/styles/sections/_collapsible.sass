@@ -1,0 +1,52 @@
+.collapsible
+
+  &__title
+    margin-bottom: 2.4rem
+
+  &__wrapper
+    @include flex($dir: column, $align: flex-start, $rowGap: 32)
+    @include desktop
+      flex-direction: row
+      column-gap: 3.2rem
+
+    &--image_first
+      .collapsible__content
+        order: 2
+      .collapsible__image
+        order: 1
+  
+  &__content
+    &__row
+      margin-bottom: 1.6rem
+      border: .1rem solid $black
+      padding: 1.6rem
+      &:last-child
+        margin-bottom: 0
+      
+      &__title
+        @include flex($space: true)
+        margin-bottom: .8rem
+  
+  &__image
+    width: 100%
+    @include desktop
+      width: 50%
+
+    &--large, &--medium
+      img
+        @include desktop
+          object-fit: cover
+
+    &--large
+      @include desktop
+        height: 60rem
+        min-width: 50rem
+        
+    &--medium
+      @include desktop
+        height: 50rem
+        min-width: 40rem
+
+    img
+      width: 100%
+      height: 100%

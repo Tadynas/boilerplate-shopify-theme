@@ -1,5 +1,57 @@
-<div>
-</div>
+<section class="banner">
+  <div class="banner__images banner__images--{{ section.settings.height }}">
+    <div class="banner__images__overlay" style="opacity: {{ section.settings.overlay_opacity }}%"></div>
+    {% if section.settings.image_1 %}
+      <div class="banner__images__item">
+        {{ section.settings.image_1 | image_url: width: nil | image_tag:
+          alt: section.settings.image_1.alt
+        }}
+      </div>
+    {% endif %}
+    {% if section.settings.image_2 %}
+      <div class="banner__images__item">
+        {{ section.settings.image_2 | image_url: width: nil | image_tag:
+          alt: section.settings.image_2.alt
+        }}
+      </div>
+    {% endif %}
+
+    <div class="banner__images__content banner__images__content--{{ section.settings.content_alignment }}-align banner__images__content--{{ section.settings.content_position }}-position">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'heading' %}
+            {% if block.settings.text %}
+              <h2 class="banner__images__content__title h2--{{ block.settings.text_size }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</h2>
+            {% endif %}
+          {% when 'content' %}
+            {% if block.settings.text %}
+              <div class="banner__images__content__subtitle" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+      
+      <div class="button-group">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'button' %}
+              {% if block.settings.fill %}
+                {% assign bannerButtonClassName = "button--white" %}
+              {% else %}
+                {% assign bannerButtonClassName = "button--white-outline" %}
+              {% endif %}
+  
+              {% if block.settings.label %}  
+                <a href="{{ block.settings.link }}" class="button {{ bannerButtonClassName }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+              {% endif %}
+            {% endcase %}
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    
+  </div>
+</section>
 
 {% schema %}
   {

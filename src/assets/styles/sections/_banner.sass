@@ -1,0 +1,93 @@
+.banner
+
+  &__images
+    @include flex($center: true)
+    position: relative
+    overflow: hidden
+    height: 100vh
+    
+    &--small
+      height: 40rem
+    
+    &--medium
+      height: 60rem
+    
+    &--large
+      height: 80rem
+    
+    &__overlay
+      background-color: $black
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+    &__item
+      flex-grow: 2
+    
+    img
+      width: 100%
+      height: 100vh
+      object-fit: cover
+    
+    &__content
+      position: absolute
+      z-index: 2
+      color: white
+
+      &--center-align
+        text-align: center
+      
+      &--left-align
+        text-align: left
+      
+      &--right-align
+        text-align: right
+      
+      &--top-left-position
+        top: 3.2rem
+        left: calc((100vw - 112rem) / 2)
+
+      &--top-center-position
+        top: 3.2rem
+        left: 50%
+        transform: translateX(-50%)
+
+      &--top-right-position
+        top: 3.2rem
+        right: calc((100vw - 112rem) / 2)
+
+      &--middle-left-position
+        top: 50%
+        left: calc((100vw - 112rem) / 2)
+        transform: translateY(-50%)
+
+      &--middle-center-position
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+      &--middle-right-position
+        top: 50%
+        right: calc((100vw - 112rem) / 2)
+        transform: translateY(-50%)
+
+      &--bottom-left-position
+        bottom: 3.2rem
+        left: calc((100vw - 112rem) / 2)
+
+      &--bottom-center-position
+        bottom: 3.2rem
+        left: 50%
+        transform: translateX(-50%)
+
+      &--bottom-right-position
+        bottom: 3.2rem
+        right: calc((100vw - 112rem) / 2)
+
+      &__title
+        margin-bottom: .8rem
+      
+      &__subtitle
+        margin-bottom: 2.4rem

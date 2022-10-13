@@ -1,0 +1,32 @@
+a
+  &.button
+    @include flex($center: true)
+
+.button
+  display: inline-block
+  @include fontSize(16, normal)
+  text-align: center
+  cursor: pointer
+  outline: none
+  border: none
+  text-decoration: none
+  width: 100%
+  height: 4rem
+
+  &--md
+    @include desktop
+      width: 24.4rem
+
+  &--black
+    background-color: $black
+    color: white
+  
+  &--white
+    background-color: white
+    color: $black
+  
+  &--white-outline
+    border: .1rem solid white
+  
+  &-group
+    @include flex($colGap: 16)

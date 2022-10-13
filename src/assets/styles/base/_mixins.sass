@@ -53,9 +53,11 @@
   font-size: calc($size / 10) + rem
   @if ($lineHeight == 0)
     line-height: calc(($size + 8) / 10) + rem
-  @else 
+  @else if ($lineHeight == "normal")
+    line-height: normal
+  @else
     line-height: calc($lineHeight / 10) + rem
 
-@mixin desktop
-  @media (min-width: 1120px) 
+@mixin desktop($size: 1120)
+  @media (min-width: $size + "px") 
     @content

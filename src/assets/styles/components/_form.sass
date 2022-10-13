@@ -1,19 +1,32 @@
 .form
 
+  &__row
+    @include desktop
+      @include flex($colGap: 32)
+
   &__input
     @include flex($centerX: true)
     border: .1rem solid $black
     padding: .8rem 1.6rem
-    @include desktop
-      width: 32rem
+    width: 100%
+    
+    &--smaller
+      @include desktop
+        width: 32rem
+
+    input, textarea
+      border: none
+      outline: none
+      width: 100%
+      @include fontSize(14)
 
     input
       flex-grow: 2
-      width: 100%
-      border: none
-      outline: none
-      @include fontSize(14)
       margin-right: 1.6rem
+    
+    textarea
+      resize: none
+      height: 10rem
 
   &__button
     background: none
