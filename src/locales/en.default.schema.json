@@ -318,6 +318,31 @@
     "image_with_text": {
       "name": "Image With Text"
     },
+    "slideshow": {
+      "name": "Slideshow",
+      "settings": {
+        "slide_height": {
+          "label": "Slide Height"
+        },
+        "pagination_style": {
+          "label": "Pagination Style"
+        },
+        "autoplay": {
+          "content": "Autoplay"
+        },
+        "enable_autoplay": {
+          "label": "Enable Autoplay"
+        },
+        "delay_between_transitions": {
+          "label": "Delay Between Transition"
+        }
+      },
+      "blocks": {
+        "slide": {
+          "name": "Slide"
+        }
+      }
+    },
     "footer": {
       "name": "Footer",
       "settings": {
