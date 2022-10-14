@@ -1,3 +1,38 @@
+<section class="image-with-text">
+  <div class="container">
+    <div class="image-with-text__wrapper image-with-text__wrapper--{{ section.settings.layout }} image-with-text__wrapper--{{ section.settings.content_position }}">
+      <div class="image-with-text__content image-with-text__content--{{ section.settings.content_alignment }}">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'heading' %}
+              {% if block.settings.text %}
+                <h2 class="image-with-text__content__title h2--{{ block.settings.text_size }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</h2>
+              {% endif %}
+            {% when 'content' %}
+              {% if block.settings.text %}
+                <div class="image-with-text__content__subtitle" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+              {% endif %}
+            {% when 'button' %}
+              {% if block.settings.label %}  
+                <a href="{{ block.settings.link }}" class="button button--black" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+
+      <div class="image-with-text__image image-with-text__image--height-{{ section.settings.height }} image-with-text__image--width-{{ section.settings.width }}">
+        {% if section.settings.image %}
+          {{ section.settings.image | image_url: width: nil | image_tag:
+            alt: section.settings.image.alt
+          }}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
 {% schema %}
   {
     "name": "t:sections.image_with_text.name",

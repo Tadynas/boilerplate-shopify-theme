@@ -12,7 +12,7 @@
             <div class="email-signup__subtitle" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
           {% endif %}
         {% when 'email_form' %}
-          <form class="form">
+          <form class="form" {{ block.shopify_attributes }}>
             <div class="form__input form__input--smaller">
               <input type="email" placeholder="Email" required>
               <button class="form__button">Send</button>
