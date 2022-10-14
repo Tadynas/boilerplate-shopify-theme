@@ -1,0 +1,112 @@
+{% schema %}
+  {
+    "name": "Map",
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "t:sections.global.text.heading.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "default": "Shop Now",
+            "label": "t:sections.global.text.name"
+          },
+          {
+            "type": "select",
+            "id": "text_size",
+            "default": "medium",
+            "label": "t:sections.global.size.text.label",
+            "options": [
+              {
+                "value": "small",
+                "label": "t:sections.global.size.small.label"
+              },
+              {
+                "value": "medium",
+                "label": "t:sections.global.size.medium.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.global.size.large.label"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name": "t:sections.global.text.content.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "default": "<p>Only today! Get best deals by purchasing from our new collection</p>",
+            "label": "t:sections.global.text.name"
+          }
+        ]
+      },
+      {
+        "type": "map",
+        "name": "Map",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "platform",
+            "default": "google",
+            "label": "Platform",
+            "options": [
+              {
+                "value": "google",
+                "label": "Google"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "api_key",
+            "label": "API Key"
+          },
+          {
+            "type": "image_picker",
+            "id": "checkmark_icon",
+            "label": "Checkmark Icon"
+          },
+          {
+            "type": "header",
+            "content": "Address Coordinates"
+          },
+          {
+            "type": "text",
+            "id": "latitude",
+            "label": "Latitude"
+          },
+          {
+            "type": "text",
+            "id": "longitude",
+            "label": "Longitude"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Map",
+        "blocks": [
+          {
+            "type": "heading"
+          },
+          {
+            "type": "content"
+          },
+          {
+            "type": "map"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
