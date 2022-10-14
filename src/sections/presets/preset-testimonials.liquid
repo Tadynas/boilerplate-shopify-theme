@@ -1,0 +1,103 @@
+{% schema %}
+  {
+    "name": "Testimonials",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "t:sections.global.text.heading.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "default": "medium",
+        "label": "t:sections.global.size.heading.label",
+        "options": [
+          {
+            "value": "small",
+            "label": "t:sections.global.size.small.label"
+          },
+          {
+            "value": "medium",
+            "label": "t:sections.global.size.medium.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.global.size.large.label"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "rating",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "default": 5,
+        "label": "Rating"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.slideshow.settings.autoplay.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_autoplay",
+        "default": false,
+        "label": "t:sections.slideshow.settings.enable_autoplay.label"
+      },
+      {
+        "type": "range",
+        "id": "delay",
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "default": 5,
+        "unit": "s",
+        "label": "t:sections.slideshow.settings.delay_between_transitions.label"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "t:sections.global.text.heading.label"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "t:sections.global.text.content.label"
+          },
+          {
+            "type": "header",
+            "content": "Author"
+          },
+          {
+            "type": "text",
+            "id": "author_name",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "author_description",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "author_image",
+            "label": "Image"
+          }
+        ]  
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials"
+      }
+    ]
+  }
+{% endschema %}
