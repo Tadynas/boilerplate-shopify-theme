@@ -1,0 +1,65 @@
+{% schema %}
+  {
+    "name": "Brands",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "t:sections.global.text.heading.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "default": "medium",
+        "label": "t:sections.global.size.heading.label",
+        "options": [
+          {
+            "value": "small",
+            "label": "t:sections.global.size.small.label"
+          },
+          {
+            "value": "medium",
+            "label": "t:sections.global.size.medium.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.global.size.large.label"
+          }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "t:sections.global.text.content.label"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "brand",
+        "name": "Brand",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Brands"
+      }
+    ]
+  }
+{% endschema %}
