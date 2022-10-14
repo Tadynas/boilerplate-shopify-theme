@@ -7,6 +7,8 @@
           alt: section.settings.image_1.alt
         }}
       </div>
+    {% else %}
+      {{ 'image' | placeholder_svg_tag }}
     {% endif %}
     {% if section.settings.image_2 %}
       <div class="banner__images__item">
@@ -73,7 +75,7 @@
         "min": 0,
         "max": 100,
         "step": 10,
-        "default": 0,
+        "default": 50,
         "unit": "%",
         "label": "t:sections.image_banner.settings.overlay_opacity.label"
       },
