@@ -2,9 +2,10 @@
 
   &__title
     margin-bottom: 2.4rem
+    text-align: center
 
   &__wrapper
-    @include flex($dir: column, $align: flex-start, $rowGap: 32)
+    @include flex($dir: column, $align: flex-start, $justify: center, $rowGap: 32)
     @include desktop
       flex-direction: row
       column-gap: 3.2rem
@@ -16,6 +17,8 @@
         order: 1
   
   &__content
+    @include desktop
+      max-width: 76.8rem
     &__row
       margin-bottom: 1.6rem
       border: .1rem solid $black
