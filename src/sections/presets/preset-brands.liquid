@@ -1,6 +1,6 @@
 {% schema %}
   {
-    "name": "Brands",
+    "name": "t:sections.brands.name",
     "settings": [
       {
         "type": "text",
@@ -36,29 +36,29 @@
     "blocks": [
       {
         "type": "brand",
-        "name": "Brand",
+        "name": "t:sections.brands.blocks.brand.name",
         "settings": [
           {
             "type": "text",
             "id": "title",
-            "label": "Title"
+            "label": "t:sections.brands.blocks.brand.settings.title.label"
           },
           {
             "type": "image_picker",
             "id": "logo",
-            "label": "Logo"
+            "label": "t:sections.brands.blocks.brand.settings.logo.label"
           },
           {
             "type": "url",
             "id": "link",
-            "label": "Link"
+            "label": "t:sections.brands.blocks.brand.settings.link.label"
           }
         ]
       }
     ],
     "presets": [
       {
-        "name": "Brands"
+        "name": "t:sections.brands.name"
       }
     ]
   }

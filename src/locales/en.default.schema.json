@@ -378,6 +378,25 @@
         }
       }
     },
+    "brands": {
+      "name": "Brands",
+      "blocks": {
+        "brand": {
+          "name": "Brand",
+          "settings": {
+            "title": {
+              "label": "Title"
+            },
+            "logo": {
+              "label": "Logo"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      }
+    },
     "footer": {
       "name": "Footer",
       "settings": {
