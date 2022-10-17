@@ -1,6 +1,6 @@
 {% schema %}
   {
-    "name": "t:sections.testimonials.name",
+    "name": "t:sections.presets.testimonials.name",
     "settings": [
       {
         "type": "text",
@@ -39,17 +39,17 @@
         "max": 5,
         "step": 1,
         "default": 5,
-        "label": "t:sections.testimonials.settings.rating.label"
+        "label": "t:sections.presets.testimonials.settings.rating.label"
       },
       {
         "type": "header",
-        "content": "t:sections.slideshow.settings.autoplay.content"
+        "content": "t:sections.presets.slideshow.settings.autoplay.content"
       },
       {
         "type": "checkbox",
         "id": "enable_autoplay",
         "default": false,
-        "label": "t:sections.slideshow.settings.enable_autoplay.label"
+        "label": "t:sections.presets.slideshow.settings.enable_autoplay.label"
       },
       {
         "type": "range",
@@ -59,13 +59,13 @@
         "step": 1,
         "default": 5,
         "unit": "s",
-        "label": "t:sections.slideshow.settings.delay_between_transitions.label"
+        "label": "t:sections.presets.slideshow.settings.delay_between_transitions.label"
       }
     ],
     "blocks": [
       {
         "type": "review",
-        "name": "t:sections.testimonials.blocks.review.name",
+        "name": "t:sections.presets.testimonials.blocks.review.name",
         "settings": [
           {
             "type": "text",
@@ -79,17 +79,17 @@
           },
           {
             "type": "header",
-            "content": "t:sections.testimonials.blocks.review.settings.author.content"
+            "content": "t:sections.presets.testimonials.blocks.review.settings.author.content"
           },
           {
             "type": "text",
             "id": "author_name",
-            "label": "t:sections.testimonials.blocks.review.settings.name.label"
+            "label": "t:sections.presets.testimonials.blocks.review.settings.name.label"
           },
           {
             "type": "text",
             "id": "author_description",
-            "label": "t:sections.testimonials.blocks.review.settings.description.label"
+            "label": "t:sections.presets.testimonials.blocks.review.settings.description.label"
           },
           {
             "type": "image_picker",
@@ -101,7 +101,7 @@
     ],
     "presets": [
       {
-        "name": "t:sections.testimonials.name"
+        "name": "t:sections.presets.testimonials.name"
       }
     ]
   }

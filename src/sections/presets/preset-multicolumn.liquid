@@ -1,6 +1,6 @@
 {% schema %}
   {
-    "name": "t:sections.multicolumn.name",
+    "name": "t:sections.presets.multicolumn.name",
     "settings": [
       {
         "type": "text",
@@ -29,7 +29,7 @@
       },
       {
         "type": "header",
-        "content": "t:sections.multicolumn.settings.columns.content"
+        "content": "t:sections.presets.multicolumn.settings.columns.content"
       },
       {
         "type": "select",
@@ -58,22 +58,22 @@
         "max": 6,
         "step": 1,
         "default": 3,
-        "label": "t:sections.multicolumn.settings.number_of_columns.label"
+        "label": "t:sections.presets.multicolumn.settings.number_of_columns.label"
       },
       {
         "type": "header",
-        "content": "t:sections.header.settings.mobile.content"
+        "content": "t:sections.common.header.settings.mobile.content"
       },
       {
         "type": "checkbox",
         "id": "enable_slider",
-        "label": "t:sections.multicolumn.settings.enable_slider.label"
+        "label": "t:sections.presets.multicolumn.settings.enable_slider.label"
       }
     ],
     "blocks": [
       {
         "type": "column",
-        "name": "t:sections.multicolumn.blocks.column.name",
+        "name": "t:sections.presets.multicolumn.blocks.column.name",
         "settings": [
           {
             "type": "image_picker",
@@ -94,7 +94,7 @@
           },
           {
             "type": "header",
-            "content": "t:sections.multicolumn.blocks.column.settings.link_button.content"
+            "content": "t:sections.presets.multicolumn.blocks.column.settings.link_button.content"
           },
           {
             "type": "text",
@@ -133,7 +133,7 @@
     ],
     "presets": [
       {
-        "name": "t:sections.multicolumn.name"
+        "name": "t:sections.presets.multicolumn.name"
       }
     ]
   }

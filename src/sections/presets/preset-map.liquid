@@ -2,7 +2,7 @@
 
 {% schema %}
   {
-    "name": "t:sections.map.name",
+    "name": "t:sections.presets.map.name",
     "blocks": [
       {
         "type": "heading",
@@ -52,44 +52,44 @@
       },
       {
         "type": "map",
-        "name": "t:sections.map.name",
+        "name": "t:sections.presets.map.name",
         "limit": 1,
         "settings": [
           {
             "type": "select",
             "id": "platform",
             "default": "google",
-            "label": "t:sections.map.blocks.map.settings.platform.label",
+            "label": "t:sections.presets.map.blocks.map.settings.platform.label",
             "options": [
               {
                 "value": "google",
-                "label": "t:sections.map.blocks.map.settings.platform.options.google.label"
+                "label": "t:sections.presets.map.blocks.map.settings.platform.options.google.label"
               }
             ]
           },
           {
             "type": "text",
             "id": "api_key",
-            "label": "t:sections.map.blocks.map.settings.api_key.label"
+            "label": "t:sections.presets.map.blocks.map.settings.api_key.label"
           },
           {
             "type": "image_picker",
             "id": "checkmark_icon",
-            "label": "t:sections.map.blocks.map.settings.checkmark_icon.label"
+            "label": "t:sections.presets.map.blocks.map.settings.checkmark_icon.label"
           },
           {
             "type": "header",
-            "content": "t:sections.map.blocks.map.settings.address_coordinates.content"
+            "content": "t:sections.presets.map.blocks.map.settings.address_coordinates.content"
           },
           {
             "type": "text",
             "id": "latitude",
-            "label": "t:sections.map.blocks.map.settings.latitude.label"
+            "label": "t:sections.presets.map.blocks.map.settings.latitude.label"
           },
           {
             "type": "text",
             "id": "longitude",
-            "label": "t:sections.map.blocks.map.settings.longitude.label"
+            "label": "t:sections.presets.map.blocks.map.settings.longitude.label"
           }
         ]
       }

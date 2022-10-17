@@ -58,6 +58,9 @@
         }
       },
       "size": {
+        "media": {
+          "label": "Media Size"
+        },
         "text": {
           "label": "Text Size"
         },
@@ -78,6 +81,9 @@
         }
       },
       "position": {
+        "media": {
+          "label": "Media Position"
+        },
         "content": {
           "label": "Content Position"
         },
@@ -145,297 +151,335 @@
         }
       }
     },
-    "header": {
-      "name": "Header",
-      "settings": {
-        "logo": {
-          "content": "Logo",
-          "width": {
-            "label": "Width"
+    "common": {
+      "header": {
+        "name": "Header",
+        "settings": {
+          "logo": {
+            "content": "Logo",
+            "width": {
+              "label": "Width"
+            },
+            "position": {
+              "label": {
+                "desktop": "Desktop Position",
+                "mobile": "Mobile Position"
+              }
+            }
           },
-          "position": {
-            "label": {
-              "desktop": "Desktop Position",
-              "mobile": "Mobile Position"
+          "customization": {
+            "content": "Customization",
+            "enable_sticky_header": {
+              "label": "Enable Sticky Header"
+            }
+          },
+          "mobile": {
+            "content": "Mobile",
+            "show_socials": {
+              "label": "Show Social Media Icons"
             }
           }
-        },
-        "customization": {
-          "content": "Customization",
-          "enable_sticky_header": {
-            "label": "Enable Sticky Header"
-          }
-        },
-        "mobile": {
-          "content": "Mobile",
-          "show_socials": {
-            "label": "Show Social Media Icons"
-          }
         }
-      }
-    },
-    "announcement_bar": {
-      "name": "Announcement Bar",
-      "blocks": {
-        "announcement": {
-          "name": "Announcement",
-          "settings": {
-            "text": {
-              "label": "Text"
-            },
-            "text_alignment": {
-              "label": "Text Alignment",
-              "options": {
-                "left": {
-                  "label": "Left"
-                },
-                "center": {
-                  "label": "Center"
-                },
-                "right": {
-                  "label": "Right"
+      },
+      "announcement_bar": {
+        "name": "Announcement Bar",
+        "blocks": {
+          "announcement": {
+            "name": "Announcement",
+            "settings": {
+              "text": {
+                "label": "Text"
+              },
+              "text_alignment": {
+                "label": "Text Alignment",
+                "options": {
+                  "left": {
+                    "label": "Left"
+                  },
+                  "center": {
+                    "label": "Center"
+                  },
+                  "right": {
+                    "label": "Right"
+                  }
                 }
+              },
+              "link": {
+                "label": "Link"
               }
-            },
-            "link": {
-              "label": "Link"
-            }
-          }
-        }
-      }
-    },
-    "image_banner": {
-      "name": "Image Banner",
-      "settings": {
-        "image_1": {
-          "label": "First Image"
-        },
-        "image_2": {
-          "label": "Second Image"
-        },
-        "overlay_opacity": {
-          "label": "Overlay Opacity"
-        },
-        "height": {
-          "options": {
-            "fullscreen": {
-              "label": "Fullscreen"
-            }
-          }
-        }
-      }
-    },
-    "rich_text": {
-      "name": "Rich Text"
-    },
-    "video": {
-      "name": "Video",
-      "settings": {
-        "cover_image": {
-          "label": "Cover Image"
-        },
-        "url": {
-          "label": "URL"
-        },
-        "alt": {
-          "label": "Video Alt Text"
-        },
-        "full_width": {
-          "label": "Full Width"
-        }
-      }
-    },
-    "multicolumn": {
-      "name": "Multicolumn",
-      "settings": {
-        "columns": {
-          "content": "Columns"
-        },
-        "number_of_columns": {
-          "label": "Number of Columns"
-        },
-        "enable_slider": {
-          "label": "Enable Slider"
-        }
-      },
-      "blocks": {
-        "column": {
-          "name": "Column",
-          "settings": {
-            "link_button": {
-              "content": "Link Button"
-            }
-          }
-        }
-      }
-    },
-    "collapsible_content": {
-      "name": "Collapsible Content",
-      "settings": {
-        "open_first_row": {
-          "label": "Open First Row"
-        },
-        "image_layout": {
-          "content": "Image Layout"
-        },
-        "layout": {
-          "label": "Layout",
-          "options": {
-            "image_first": {
-              "label": "Image First"
-            },
-            "image_second": {
-              "label": "Image Second"
             }
           }
         }
       },
-      "blocks": {
-        "collapsible_row": {
-          "name": "Collapsible Row"
-        }
-      }
-    },
-    "contact_form": {
-      "name": "Contact Form"
-    },
-    "custom_liquid": {
-      "name": "Custom Liquid",
-      "settings": {
-        "liquid_code": {
-          "label": "Liquid Code"
-        }
-      }
-    },
-    "email_signup": {
-      "name": "Email Signup",
-      "blocks": {
-        "email_form": {
-          "name": "Email Form"
-        }
-      }
-    },
-    "image_with_text": {
-      "name": "Image With Text"
-    },
-    "slideshow": {
-      "name": "Slideshow",
-      "settings": {
-        "slide_height": {
-          "label": "Slide Height"
-        },
-        "pagination_style": {
-          "label": "Pagination Style",
-          "options": {
-            "dots": {
-              "label": "Dots"
-            },
-            "numbers": {
-              "label": "Numbers"
-            },
-            "counter": {
-              "label": "Counter"
+      "footer": {
+        "name": "Footer",
+        "settings": {
+          "email_signup": {
+            "content": "Email Signup",
+            "show_email_signup": {
+              "label": "Show Email Signup"
             }
           }
-        },
-        "autoplay": {
-          "content": "Autoplay"
-        },
-        "enable_autoplay": {
-          "label": "Enable Autoplay"
-        },
-        "delay_between_transitions": {
-          "label": "Delay Between Transition"
+        }
+      }
+    },
+    "presets": {
+      "image_banner": {
+        "name": "Image Banner",
+        "settings": {
+          "image_1": {
+            "label": "First Image"
+          },
+          "image_2": {
+            "label": "Second Image"
+          },
+          "overlay_opacity": {
+            "label": "Overlay Opacity"
+          },
+          "height": {
+            "options": {
+              "fullscreen": {
+                "label": "Fullscreen"
+              }
+            }
+          }
         }
       },
-      "blocks": {
-        "slide": {
-          "name": "Slide"
-        }
-      }
-    },
-    "testimonials": {
-      "name": "Testimonials",
-      "settings": {
-        "rating": {
-          "label": "Rating"
+      "rich_text": {
+        "name": "Rich Text"
+      },
+      "video": {
+        "name": "Video",
+        "settings": {
+          "cover_image": {
+            "label": "Cover Image"
+          },
+          "url": {
+            "label": "URL"
+          },
+          "alt": {
+            "label": "Video Alt Text"
+          },
+          "full_width": {
+            "label": "Full Width"
+          }
         }
       },
-      "blocks": {
-        "review": {
-          "name": "Review",
-          "settings": {
-            "author": {
-              "content": "Author"
-            },
-            "name": {
-              "label": "Name"
-            },
-            "description": {
-              "label": "Description"
+      "multicolumn": {
+        "name": "Multicolumn",
+        "settings": {
+          "columns": {
+            "content": "Columns"
+          },
+          "number_of_columns": {
+            "label": "Number of Columns"
+          },
+          "enable_slider": {
+            "label": "Enable Slider"
+          }
+        },
+        "blocks": {
+          "column": {
+            "name": "Column",
+            "settings": {
+              "link_button": {
+                "content": "Link Button"
+              }
             }
           }
         }
-      }
-    },
-    "brands": {
-      "name": "Brands",
-      "blocks": {
-        "brand": {
-          "name": "Brand",
-          "settings": {
-            "title": {
-              "label": "Title"
-            },
-            "logo": {
-              "label": "Logo"
-            },
-            "link": {
-              "label": "Link"
+      },
+      "collapsible_content": {
+        "name": "Collapsible Content",
+        "settings": {
+          "open_first_row": {
+            "label": "Open First Row"
+          },
+          "image_layout": {
+            "content": "Image Layout"
+          },
+          "layout": {
+            "label": "Layout",
+            "options": {
+              "image_first": {
+                "label": "Image First"
+              },
+              "image_second": {
+                "label": "Image Second"
+              }
+            }
+          }
+        },
+        "blocks": {
+          "collapsible_row": {
+            "name": "Collapsible Row"
+          }
+        }
+      },
+      "contact_form": {
+        "name": "Contact Form"
+      },
+      "custom_liquid": {
+        "name": "Custom Liquid",
+        "settings": {
+          "liquid_code": {
+            "label": "Liquid Code"
+          }
+        }
+      },
+      "email_signup": {
+        "name": "Email Signup",
+        "blocks": {
+          "email_form": {
+            "name": "Email Form"
+          }
+        }
+      },
+      "image_with_text": {
+        "name": "Image With Text"
+      },
+      "slideshow": {
+        "name": "Slideshow",
+        "settings": {
+          "slide_height": {
+            "label": "Slide Height"
+          },
+          "pagination_style": {
+            "label": "Pagination Style",
+            "options": {
+              "dots": {
+                "label": "Dots"
+              },
+              "numbers": {
+                "label": "Numbers"
+              },
+              "counter": {
+                "label": "Counter"
+              }
+            }
+          },
+          "autoplay": {
+            "content": "Autoplay"
+          },
+          "enable_autoplay": {
+            "label": "Enable Autoplay"
+          },
+          "delay_between_transitions": {
+            "label": "Delay Between Transition"
+          }
+        },
+        "blocks": {
+          "slide": {
+            "name": "Slide"
+          }
+        }
+      },
+      "testimonials": {
+        "name": "Testimonials",
+        "settings": {
+          "rating": {
+            "label": "Rating"
+          }
+        },
+        "blocks": {
+          "review": {
+            "name": "Review",
+            "settings": {
+              "author": {
+                "content": "Author"
+              },
+              "name": {
+                "label": "Name"
+              },
+              "description": {
+                "label": "Description"
+              }
             }
           }
         }
-      }
-    },
-    "map": {
-      "name": "Map",
-      "blocks": {
-        "map": {
-          "settings": {
-            "platform": {
-              "label": "Platform",
-              "options": {
-                "google": {
-                  "label": "Google"
+      },
+      "brands": {
+        "name": "Brands",
+        "blocks": {
+          "brand": {
+            "name": "Brand",
+            "settings": {
+              "title": {
+                "label": "Title"
+              },
+              "logo": {
+                "label": "Logo"
+              },
+              "link": {
+                "label": "Link"
+              }
+            }
+          }
+        }
+      },
+      "map": {
+        "name": "Map",
+        "blocks": {
+          "map": {
+            "settings": {
+              "platform": {
+                "label": "Platform",
+                "options": {
+                  "google": {
+                    "label": "Google"
+                  }
                 }
+              },
+              "api_key": {
+                "label": "API Key"
+              },
+              "checkmark_icon": {
+                "label": "Checkmark Icon"
+              },
+              "address_coordinates": {
+                "content": "Address Coordinates"
+              },
+              "latitude": {
+                "label": "Latitude"
+              },
+              "longitude": {
+                "label": "Longitude"
               }
-            },
-            "api_key": {
-              "label": "API Key"
-            },
-            "checkmark_icon": {
-              "label": "Checkmark Icon"
-            },
-            "address_coordinates": {
-              "content": "Address Coordinates"
-            },
-            "latitude": {
-              "label": "Latitude"
-            },
-            "longitude": {
-              "label": "Longitude"
             }
           }
         }
       }
     },
-    "footer": {
-      "name": "Footer",
-      "settings": {
-        "email_signup": {
-          "content": "Email Signup",
-          "show_email_signup": {
-            "label": "Show Email Signup"
+    "main": {
+      "product_information": {
+        "name": "Product Information",
+        "settings": {
+          "enable_sticky_content": {
+            "label": "Enable Sticky Content"
+          }
+        },
+        "blocks": {
+          "heading": {
+            "settings": {
+              "click_to_share": {
+                "label": "Click To Share"
+              }
+            }
+          },
+          "price": {
+            "name": "Price"
+          },
+          "variants": {
+            "name": "Variants"
+          },
+          "quantity": {
+            "name": "Quantity"
+          },
+          "buy_buttons": {
+            "name": "Buttons"
+          },
+          "collapsible_row": {
+            "name": "Collapsible Row"
           }
         }
       }

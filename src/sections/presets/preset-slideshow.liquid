@@ -1,12 +1,12 @@
 {% schema %}
   {
-    "name": "t:sections.slideshow.name",
+    "name": "t:sections.presets.slideshow.name",
     "settings": [
       {
         "type": "select",
         "id": "height",
         "default": "default",
-        "label": "t:sections.slideshow.settings.slide_height.label",
+        "label": "t:sections.presets.slideshow.settings.slide_height.label",
         "options": [
           {
             "value": "default",
@@ -30,31 +30,31 @@
         "type": "select",
         "id": "pagination_style",
         "default": "dots",
-        "label": "t:sections.slideshow.settings.pagination_style.label",
+        "label": "t:sections.presets.slideshow.settings.pagination_style.label",
         "options": [
           {
             "value": "dots",
-            "label": "t:sections.slideshow.settings.pagination_style.options.dots.label"
+            "label": "t:sections.presets.slideshow.settings.pagination_style.options.dots.label"
           },
           {
             "value": "numbers",
-            "label": "t:sections.slideshow.settings.pagination_style.options.numbers.label"
+            "label": "t:sections.presets.slideshow.settings.pagination_style.options.numbers.label"
           },
           {
             "value": "counter",
-            "label": "t:sections.slideshow.settings.pagination_style.options.counter.label"
+            "label": "t:sections.presets.slideshow.settings.pagination_style.options.counter.label"
           }
         ]
       },
       {
         "type": "header",
-        "content": "t:sections.slideshow.settings.autoplay.content"
+        "content": "t:sections.presets.slideshow.settings.autoplay.content"
       },
       {
         "type": "checkbox",
         "id": "enable_autoplay",
         "default": false,
-        "label": "t:sections.slideshow.settings.enable_autoplay.label"
+        "label": "t:sections.presets.slideshow.settings.enable_autoplay.label"
       },
       {
         "type": "range",
@@ -64,13 +64,13 @@
         "step": 1,
         "default": 5,
         "unit": "s",
-        "label": "t:sections.slideshow.settings.delay_between_transitions.label"
+        "label": "t:sections.presets.slideshow.settings.delay_between_transitions.label"
       }
     ],
     "blocks": [
       {
         "type": "slide",
-        "name": "t:sections.slideshow.blocks.slide.name",
+        "name": "t:sections.presets.slideshow.blocks.slide.name",
         "settings": [
           {
             "type": "image_picker",
@@ -85,7 +85,7 @@
             "step": 10,
             "default": 0,
             "unit": "%",
-            "label": "t:sections.image_banner.settings.overlay_opacity.label"
+            "label": "t:sections.presets.image_banner.settings.overlay_opacity.label"
           },
           {
             "type": "header",
@@ -218,7 +218,7 @@
     ],
     "presets": [
       {
-        "name": "t:sections.slideshow.name"
+        "name": "t:sections.presets.slideshow.name"
       }
     ]
   }
