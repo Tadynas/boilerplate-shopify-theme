@@ -397,6 +397,38 @@
         }
       }
     },
+    "map": {
+      "name": "Map",
+      "blocks": {
+        "map": {
+          "settings": {
+            "platform": {
+              "label": "Platform",
+              "options": {
+                "google": {
+                  "label": "Google"
+                }
+              }
+            },
+            "api_key": {
+              "label": "API Key"
+            },
+            "checkmark_icon": {
+              "label": "Checkmark Icon"
+            },
+            "address_coordinates": {
+              "content": "Address Coordinates"
+            },
+            "latitude": {
+              "label": "Latitude"
+            },
+            "longitude": {
+              "label": "Longitude"
+            }
+          }
+        }
+      }
+    },
     "footer": {
       "name": "Footer",
       "settings": {
