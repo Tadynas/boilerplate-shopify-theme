@@ -1,6 +1,6 @@
 {% schema %}
   {
-    "name": "Testimonials",
+    "name": "t:sections.testimonials.name",
     "settings": [
       {
         "type": "text",
@@ -39,7 +39,7 @@
         "max": 5,
         "step": 1,
         "default": 5,
-        "label": "Rating"
+        "label": "t:sections.testimonials.settings.rating.label"
       },
       {
         "type": "header",
@@ -65,7 +65,7 @@
     "blocks": [
       {
         "type": "review",
-        "name": "Review",
+        "name": "t:sections.testimonials.blocks.review.name",
         "settings": [
           {
             "type": "text",
@@ -79,29 +79,29 @@
           },
           {
             "type": "header",
-            "content": "Author"
+            "content": "t:sections.testimonials.blocks.review.settings.author.content"
           },
           {
             "type": "text",
             "id": "author_name",
-            "label": "Name"
+            "label": "t:sections.testimonials.blocks.review.settings.name.label"
           },
           {
             "type": "text",
             "id": "author_description",
-            "label": "Description"
+            "label": "t:sections.testimonials.blocks.review.settings.description.label"
           },
           {
             "type": "image_picker",
             "id": "author_image",
-            "label": "Image"
+            "label": "t:sections.global.element.image.label"
           }
         ]  
       }
     ],
     "presets": [
       {
-        "name": "Testimonials"
+        "name": "t:sections.testimonials.name"
       }
     ]
   }

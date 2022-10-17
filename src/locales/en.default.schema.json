@@ -354,6 +354,30 @@
         }
       }
     },
+    "testimonials": {
+      "name": "Testimonials",
+      "settings": {
+        "rating": {
+          "label": "Rating"
+        }
+      },
+      "blocks": {
+        "review": {
+          "name": "Review",
+          "settings": {
+            "author": {
+              "content": "Author"
+            },
+            "name": {
+              "label": "Name"
+            },
+            "description": {
+              "label": "Description"
+            }
+          }
+        }
+      }
+    },
     "footer": {
       "name": "Footer",
       "settings": {
