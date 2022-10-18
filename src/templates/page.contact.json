@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "page-content": {
+      "type": "main-page-content"
+    },
+    "contact-form": {
+      "type": "preset-contact-form"
+    }
+  },
+  "order": ["page-content", "contact-form"]
+}
