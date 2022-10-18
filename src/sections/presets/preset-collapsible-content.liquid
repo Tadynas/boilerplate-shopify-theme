@@ -1,8 +1,12 @@
 <section class="collapsible">
   <div class="container">
-    {% if section.settings.heading %}
+    {% comment %} {% if section.settings.heading %}
       <h1 class="collapsible__title h1--{{section.settings.heading_size}}">{{ section.settings.heading }}</h1>
-    {% endif %}
+    {% endif %} {% endcomment %}
+    {% render 'comp-heading', 
+      text: section.settings.heading,
+      size: section.settings.heading_size
+    %}
 
     <div class="collapsible__wrapper collapsible__wrapper--{{ section.settings.layout }}">
       <div class="collapsible__content">
