@@ -1,3 +1,48 @@
+<section class="multicolumn">
+  <div class="container">
+    {% if section.settings.heading %}
+      <h1 class="multicolumn__title h1--{{section.settings.heading_size}}">{{ section.settings.heading }}</h1>
+    {% endif %}
+    <div class="multicolumn__row">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'column' %}
+            <div class="multicolumn__row__column" {{ block.shopify_attributes }}>
+              {% if block.settings.image %}
+                {{ block.settings.image | image_url: width: nil | image_tag:
+                  alt: block.settings.image.alt
+                }}
+              {% else %}
+                {{ 'image' | placeholder_svg_tag }}
+              {% endif %}
+              {% if block.settings.heading %}
+                <h3 class="multicolumn__row__column__title">{{ block.settings.heading }}</h3>
+              {% endif %}
+              {% if block.settings.content %}
+                {{ block.settings.content }}
+              {% endif %}
+              {% if block.settings.link_label %}
+                <div class="multicolumn__row__column__button">
+                  <a href="{{ block.settings.link_url }}" class="button button--black">{{ block.settings.link_label }}</a>
+                </div>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'button' %}
+          {% if block.settings.label %} 
+            <div class="multicolumn__button">
+              <a href="{{ block.settings.link }}" class="button button--center button--black button--md" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+            </div>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+
 {% schema %}
   {
     "name": "t:sections.presets.multicolumn.name",
@@ -83,6 +128,7 @@
           {
             "type": "text",
             "id": "heading",
+            "default": "Multicolumn",
             "default": "Column",
             "label": "t:sections.global.text.heading.label"
           },
@@ -99,6 +145,7 @@
           {
             "type": "text",
             "id": "link_label",
+            "default": "Get Deals",
             "label": "t:sections.global.element.button.settings.label.label"
           },
           {
