@@ -1,8 +1,9 @@
 <section class="multicolumn">
   <div class="container">
-    {% if section.settings.heading %}
-      <h1 class="multicolumn__title h1--{{section.settings.heading_size}}">{{ section.settings.heading }}</h1>
-    {% endif %}
+    {% render 'comp-heading', 
+      text: section.settings.heading,
+      size: section.settings.heading_size
+    %}
     <div class="multicolumn__row">
       {% for block in section.blocks %}
         {% case block.type %}

@@ -1,9 +1,10 @@
 <section class="contact">
   <div class="container">
     <div class="contact__wrapper">
-      {% if section.settings.heading %}
-        <h1 class="contact__title h1--{{section.settings.heading_size}}">{{ section.settings.heading }}</h1>
-      {% endif %}
+      {% render 'comp-heading', 
+        text: section.settings.heading,
+        size: section.settings.heading_size
+      %}
       <form class="form contact__form">
         <div class="form__row">
           <div class="form__input">
