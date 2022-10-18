@@ -556,6 +556,14 @@
             "label": "Show Product Count"
           }
         }
+      },
+      "list_collections_grid": {
+        "name": "Collection Grid",
+        "settings": {
+          "collection_card": {
+            "content": "Collection Card"
+          }
+        }
       }
     }
   },

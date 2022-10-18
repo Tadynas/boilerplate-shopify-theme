@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "list-collections-grid": {
+      "type": "main-list-collections-grid"
+    }
+  },
+  "order": ["list-collections-grid"]
+}
