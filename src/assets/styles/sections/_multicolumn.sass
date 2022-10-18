@@ -1,0 +1,30 @@
+.multicolumn
+
+  &__title
+    margin-bottom: 2.4rem
+
+  &__row
+    @include flex($dir: column, $rowGap: 16, $wrap: wrap)
+    @include desktop
+      flex-direction: row
+      column-gap: 3.2rem
+    
+    &__column
+      background-color: $grey
+      padding: 1.6rem
+      @include desktop
+        flex-grow: 2
+        max-width: calc(( 100% / 3 ) - 2.4rem)
+        padding: 3.2rem
+      
+      svg, img
+        border: .1rem solid $black
+      
+      &__title
+        padding: .8rem 0 2.4rem 0
+      
+      &__button
+        margin-top: 2.4rem
+  
+  &__button
+    margin-top: 4.8rem
