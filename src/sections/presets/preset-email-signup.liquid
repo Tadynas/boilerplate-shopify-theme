@@ -4,9 +4,14 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'heading' %}
-          {% if block.settings.text %}
+          {% comment %} {% if block.settings.text %}
             <h1 class="email-signup__title h1--{{block.settings.text_size}}" {{ block.shopify_attributes }}>{{ block.settings.text }}</h1>
-          {% endif %}
+          {% endif %} {% endcomment %}
+          {% render 'comp-heading', 
+            text: block.settings.text,
+            size: block.settings.text_size
+            shopify_attributes: block.shopify_attributes
+          %}
         {% when 'content' %}
           {% if block.settings.text %}
             <div class="email-signup__subtitle" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
