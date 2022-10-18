@@ -57,6 +57,20 @@
           }
         }
       },
+      "ratio": {
+        "image": {
+          "label": "Image Ratio"
+        },
+        "default": {
+          "label": "Default"
+        },
+        "portrait": {
+          "label": "Portrait"
+        },
+        "square": {
+          "label": "Square"
+        }
+      },
       "size": {
         "media": {
           "label": "Media Size"
@@ -480,6 +494,66 @@
           },
           "collapsible_row": {
             "name": "Collapsible Row"
+          }
+        }
+      },
+      "collection_banner": {
+        "name": "Collection Banner",
+        "settings": {
+          "show_description": {
+            "label": "Show Description"
+          },
+          "show_image": {
+            "label": "Show Image"
+          }
+        }
+      },
+      "collection_product_grid": {
+        "name": "Product Grid",
+        "settings": {
+          "products_per_page": {
+            "label": "Products Per Page"
+          },
+          "number_of_columns": {
+            "label": "Number of Columns"
+          },
+          "product_card": {
+            "content": "Product Card"
+          },
+          "show_second_image_on_hover": {
+            "label": "Show Second Image on Hover"
+          },
+          "show_vendor": {
+            "label": "Show Vendor"
+          },
+          "filtering": {
+            "content": "Filtering"
+          },
+          "enable_filtering": {
+            "label": "Enable Filtering"
+          },
+          "filter_layout": {
+            "label": "Filter Layout",
+            "options": {
+              "horizontal": {
+                "label": "Horizontal"
+              },
+              "vertical": {
+                "label": "Vertical"
+              },
+              "drawer": {
+                "label": "Drawer"
+              }
+            }
+          },
+          "sorting": {
+            "content": "Sorting"
+          },
+          "enable_sorting": {
+            "label": "Enable Sorting"
+          },
+          "show_product_count": {
+            "label": "Show Product Count"
           }
         }
       }
