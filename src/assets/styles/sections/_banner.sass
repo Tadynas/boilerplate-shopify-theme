@@ -32,6 +32,7 @@
       object-fit: cover
     
     &__content
+      @include flex($dir: column, $rowGap: 16)
       position: absolute
       z-index: 2
       color: white
@@ -85,9 +86,6 @@
       &--bottom-right-position
         bottom: 3.2rem
         right: calc((100vw - 112rem) / 2)
-
-      &__title
-        margin-bottom: .8rem
       
-      &__subtitle
-        margin-bottom: 2.4rem
+      .title
+        margin-bottom: 0

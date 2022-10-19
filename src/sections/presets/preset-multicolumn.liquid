@@ -19,9 +19,9 @@
               {% if block.settings.heading %}
                 <h3 class="multicolumn__row__column__title">{{ block.settings.heading }}</h3>
               {% endif %}
-              {% if block.settings.content %}
-                {{ block.settings.content }}
-              {% endif %}
+              {% render 'comp-content', 
+                text: block.settings.content
+              %}
               {% if block.settings.link_label %}
                 <div class="multicolumn__row__column__button">
                   <a href="{{ block.settings.link_url }}" class="button button--black">{{ block.settings.link_label }}</a>

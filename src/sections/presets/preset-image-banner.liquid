@@ -30,9 +30,10 @@
               %}
             {% endif %}
           {% when 'content' %}
-            {% if block.settings.text %}
-              <div class="banner__images__content__subtitle" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
-            {% endif %}
+            {% render 'comp-content', 
+              text: block.settings.text,
+              shopify_attributes: block.shopify_attributes
+            %}
         {% endcase %}
       {% endfor %}
       
