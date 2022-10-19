@@ -34,11 +34,12 @@
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'button' %}
-          {% if block.settings.label %} 
-            <div class="multicolumn__button">
-              <a href="{{ block.settings.link }}" class="button button--center button--black button--md" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
-            </div>
-          {% endif %}
+          {% render 'comp-button', 
+            label: block.settings.label,
+            link: block.settings.link,
+            className: "button button--center button--black button--md",
+            shopify_attributes: block.shopify_attributes
+          %}
       {% endcase %}
     {% endfor %}
   </div>
