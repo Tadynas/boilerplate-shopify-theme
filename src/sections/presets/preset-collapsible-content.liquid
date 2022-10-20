@@ -6,29 +6,29 @@
     %}
 
     <div class="collapsible__wrapper collapsible__wrapper--{{ section.settings.layout }}">
-      <div class="collapsible__content">
+      <div class="collapsible__row">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'collapsible_row' %}
 
               {% if forloop.first %}
                 {% if section.settings.open_first_row %}
-                  {% assign collapsibleRowClassName = "collapsible__content__row--first-show" %}
+                  {% assign collapsibleRowClassName = "collapsible__row__box--first-show" %}
                 {% endif %}
               {% else %}
                 {% assign collapsibleRowClassName = "" %}
               {% endif %}
 
-              <div class="collapsible__content__row {{ collapsibleRowClassName }}">
+              <div class="collapsible__row__box {{ collapsibleRowClassName }}">
                 {% if block.settings.heading %}
-                  <div class="collapsible__content__row__title">
+                  <div class="collapsible__row__box__title">
                     <h4>{{block.settings.heading}}</h4>
-                    <div>+</div>
+                    <div role="button">+</div>
                   </div>
                 {% endif %}
-                {% if block.settings.content %}
-                  <p class="collapsible__content__row__content">{{block.settings.content}}</p>
-                {% endif %}
+                {% render 'comp-content', 
+                  text: block.settings.content
+                %}
               </div>
           {% endcase %}
         {% endfor %}

@@ -1,5 +1,8 @@
 .collapsible
 
+  .title
+    text-align: center
+
   &__wrapper
     @include flex($dir: column, $align: flex-start, $justify: center, $rowGap: 32)
     @include desktop
@@ -7,15 +10,15 @@
       column-gap: 3.2rem
 
     &--image_first
-      .collapsible__content
+      .collapsible__row
         order: 2
       .collapsible__image
         order: 1
   
-  &__content
+  &__row
     @include desktop
       max-width: 76.8rem
-    &__row
+    &__box
       margin-bottom: 1.6rem
       border: .1rem solid $black
       padding: 1.6rem

@@ -1,3 +1,33 @@
+<section class="richtext">
+  <div class="container">
+    
+    <div class="richtext__wrapper">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'heading' %}
+            {% render 'comp-heading', 
+              text: block.settings.text,
+              size: block.settings.text_size
+              shopify_attributes: block.shopify_attributes
+            %}
+          {% when 'content' %}
+            {% render 'comp-content', 
+              text: block.settings.text,
+              shopify_attributes: block.shopify_attributes
+            %}
+          {% when 'button' %}
+            {% render 'comp-button', 
+              label: block.settings.label,
+              link: block.settings.link,
+              className: "button button--black button--md",
+              shopify_attributes: block.shopify_attributes
+            %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 {% schema %}
   {
     "name": "t:sections.presets.rich_text.name",

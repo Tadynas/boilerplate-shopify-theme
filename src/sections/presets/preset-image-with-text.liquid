@@ -13,13 +13,17 @@
                 %}
               {% endif %}
             {% when 'content' %}
-              {% if block.settings.text %}
-                <div class="image-with-text__content__subtitle" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
-              {% endif %}
+              {% render 'comp-content', 
+                text: block.settings.text,
+                shopify_attributes: block.shopify_attributes
+              %}
             {% when 'button' %}
-              {% if block.settings.label %}  
-                <a href="{{ block.settings.link }}" class="button button--black" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
-              {% endif %}
+              {% render 'comp-button', 
+                label: block.settings.label,
+                link: block.settings.link,
+                className: "button button--black",
+                shopify_attributes: block.shopify_attributes
+              %}
           {% endcase %}
         {% endfor %}
       </div>
