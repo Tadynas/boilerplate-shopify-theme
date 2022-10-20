@@ -1,0 +1,21 @@
+.video
+
+  &__wrapper
+    position: relative
+    overflow: hidden
+
+  &__placeholder
+    @include positionCenterY()
+
+    img
+      width: 100%
+      height: 100%
+    
+    &__icon
+      @include positionCenter()
+      @include circle($size: 64, $color: white)
+    
+      svg
+        &.icon-play
+          width: 5.6rem
+          height: 5.6rem

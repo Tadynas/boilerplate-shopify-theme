@@ -61,3 +61,29 @@
 @mixin desktop($size: 1120)
   @media (min-width: $size + "px") 
     @content
+
+@mixin position()
+  position: absolute
+  top: $top
+  left: $left
+  right: $right
+  bottom: $bottom
+
+@mixin positionCenter()
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+@mixin positionCenterX()
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+
+@mixin positionCenterY()
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translateY(-50%)
+  

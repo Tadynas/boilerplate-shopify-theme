@@ -4,6 +4,32 @@
       text: section.settings.heading,
       size: section.settings.heading_size
     %}
+
+    <div class="video__wrapper">
+      {% if section.settings.cover_image != blank %}
+        <button class="video__placeholder js-video-placeholder" role="button">
+          {% if section.settings.cover_image != blank %}
+            {{ section.settings.cover_image | image_url: width: nil | image_tag:
+              loading: 'lazy',
+              widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+              alt: section.settings.alt
+            }}
+          {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
+          {% endif %}
+          <span class="video__placeholder__icon">
+            {% render "icon-play" %}
+          </span>
+        </button>
+      {% endif %}
+    
+      {% if section.settings.url.type == "youtube" %}
+        {% assign url = section.settings.url | split: "_" %}
+        <iframe width="100%" height="600" src="https://www.youtube.com/embed/_{{ url[1] }}" title="YouTube veo player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="{{ section.settings.alt }}"></iframe>
+      {% else %}
+        {{ 'lifestyle-2' | placeholder_svg_tag }}
+      {% endif %}
+    </div>
   </div>
 </section>
 
