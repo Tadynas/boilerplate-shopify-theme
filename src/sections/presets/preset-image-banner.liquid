@@ -1,20 +1,22 @@
 <section class="banner">
   <div class="banner__images banner__images--{{ section.settings.height }}">
     <div class="banner__images__overlay" style="opacity: {{ section.settings.overlay_opacity }}%"></div>
-    {% if section.settings.image_1 %}
+    {% if section.settings.image_1 != blank %}
       <div class="banner__images__item">
-        {{ section.settings.image_1 | image_url: width: nil | image_tag:
-          alt: section.settings.image_1.alt
-        }}
+        {% render 'comp-image', 
+          image: section.settings.image_1,
+          image_width: nil
+        %}
       </div>
     {% else %}
       {{ 'lifestyle-2' | placeholder_svg_tag }}
     {% endif %}
-    {% if section.settings.image_2 %}
+    {% if section.settings.image_2 != blank %}
       <div class="banner__images__item">
-        {{ section.settings.image_2 | image_url: width: nil | image_tag:
-          alt: section.settings.image_2.alt
-        }}
+        {% render 'comp-image', 
+          image: section.settings.image_2,
+          image_width: nil
+        %}
       </div>
     {% endif %}
 

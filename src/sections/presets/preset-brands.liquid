@@ -19,10 +19,11 @@
             {% else %}
               <div class="brands__row__card" {{ block.shopify_attributes }}>
             {% endif %}
-              {% if block.settings.logo %}
-                {{ block.settings.logo | image_url: width: nil | image_tag:
-                  alt: block.settings.logo.alt
-                }}
+              {% if block.settings.logo != blank %}
+                {% render 'comp-image', 
+                  image: block.settings.logo,
+                  image_width: nil
+                %}
               {% else %}
                 {{ 'image' | placeholder_svg_tag }}
               {% endif %}

@@ -3,12 +3,13 @@
     <div class="header__container">
       <!-- Store Logo/Name-->
       <div class="header__image">
-        {% if section.settings.logo_image %}
-          {{ section.settings.logo_image | image_url: width: section.settings.logo_width | image_tag:
-            alt: section.settings.logo_image.alt
-          }}
-        {% else %}
-          <h3>{{ shop.name }}</h3>
+        {% if section.settings.logo_image != blank %}
+          {% render 'comp-image', 
+            image: section.settings.logo_image,
+            image_width: section.settings.logo_width
+          %}
+          {% else %}
+            <h3>{{ shop.name }}</h3>
         {% endif %}
       </div>
     <!-- Navigation -->

@@ -34,11 +34,12 @@
         {% endfor %}
       </div>
   
-      {% if section.settings.image %}
+      {% if section.settings.image!= blank %}
         <div class="collapsible__image collapsible__image--{{ section.settings.height }}">
-          {{ section.settings.image | image_url: width: nil | image_tag:
-            alt: section.settings.image.alt
-          }}
+          {% render 'comp-image', 
+            image: section.settings.image,
+            image_width: nil
+          %}
         </div>
       {% endif %}
     </div>
