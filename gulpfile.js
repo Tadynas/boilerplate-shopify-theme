@@ -4,23 +4,24 @@ const clean = require('gulp-clean');
 const flatten = require('gulp-flatten');
 const run = require('gulp-run');
 
-gulp.task('clean', function(done){
-    gulp.src('dist/assets/*', {read: false}).pipe(clean());
-    gulp.src('dist/config/*', {read: false}).pipe(clean());
-    gulp.src('dist/layout/*', {read: false}).pipe(clean());
-    gulp.src('dist/locales/*', {read: false}).pipe(clean());
-    gulp.src('dist/sections/*', {read: false}).pipe(clean());
-    gulp.src('dist/snippets/*', {read: false}).pipe(clean());
-    gulp.src('dist/templates/*', {read: false}).pipe(clean());
-    done()
+gulp.task('clean', function(){
+    return gulp.src('dist/*', {read: false}).pipe(clean())
 });
 
-gulp.task('assets', function() {
+gulp.task('styles', function() {
     return gulp.src('src/assets/styles/**/*.sass')
         .pipe(sass())
         .pipe(flatten())
         .pipe(gulp.dest('dist/assets'))
 });
+
+gulp.task('scripts', function() {
+    return gulp.src('src/assets/scripts/**/*.js')
+        .pipe(flatten())
+        .pipe(gulp.dest('dist/assets'))
+});
+
+gulp.task('assets', gulp.series('styles', 'scripts'));
 
 gulp.task('files', function() {
     return gulp.src(['src/.shopifyignore', 'src/**/*', '!src/assets/**/*'])
@@ -33,7 +34,8 @@ gulp.task('serve', function() {
 })
 
 gulp.task('watch', function() {
-    gulp.watch('src/assets/**/*', gulp.series('assets'));
+    gulp.watch('src/assets/styles/**/*', gulp.series('styles'));
+    gulp.watch('src/assets/scripts/**/*', gulp.series('scripts'));
     gulp.watch(['src/**/*', '!src/assets/**/*'], gulp.series('files'));
 })
 

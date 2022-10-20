@@ -1,3 +1,5 @@
+{{ 'section-banner.css' | asset_url | stylesheet_tag }}
+
 <section class="banner">
   <div class="banner__images banner__images--{{ section.settings.height }}">
     <div class="banner__images__overlay" style="opacity: {{ section.settings.overlay_opacity }}%"></div>
