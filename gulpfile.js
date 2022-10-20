@@ -8,7 +8,7 @@ gulp.task('clean', function(){
     return gulp.src('dist/*', {read: false}).pipe(clean())
 });
 
-gulp.task('sass', function() {
+gulp.task('styles', function() {
     return gulp.src('src/assets/styles/**/*.sass')
         .pipe(sass())
         .pipe(flatten())
@@ -21,7 +21,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/assets'))
 });
 
-gulp.task('assets', gulp.series('sass', 'scripts'));
+gulp.task('assets', gulp.series('styles', 'scripts'));
 
 gulp.task('files', function() {
     return gulp.src(['src/.shopifyignore', 'src/**/*', '!src/assets/**/*'])
@@ -34,7 +34,8 @@ gulp.task('serve', function() {
 })
 
 gulp.task('watch', function() {
-    gulp.watch('src/assets/**/*', gulp.series('assets'));
+    gulp.watch('src/assets/styles/**/*', gulp.series('styles'));
+    gulp.watch('src/assets/scripts/**/*', gulp.series('scripts'));
     gulp.watch(['src/**/*', '!src/assets/**/*'], gulp.series('files'));
 })
 

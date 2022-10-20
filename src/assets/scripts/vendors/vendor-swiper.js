@@ -1,5 +1,5 @@
 const initSwiper = () => {
-  console.log('Initialize Swiper')
+  console.log('Initialize Swiper!')
 }
 
 export default initSwiper

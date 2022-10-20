@@ -1,3 +1,3 @@
-import initSwiper from './swiper.js'
+import initSwiper from './vendor-swiper.js'
 
 initSwiper()
