@@ -1,0 +1,24 @@
+.brands
+
+  .content
+    margin-bottom: 3.2rem
+
+  &__row
+    @include flex($dir: column, $justify: space-between, $rowGap: 32, $wrap: wrap)
+    @include desktop
+      flex-direction: row
+      column-gap: 2.4rem
+    
+    &__card
+      padding: 1.6rem
+      background-color: $grey
+      @include flex($dir: column)
+      @include desktop
+        width: calc(( 100% / 5 ) - 2.4rem)
+      
+      svg, img
+        border: .1rem solid $black
+      
+      &__title
+        padding-top: 1.6rem
+        text-align: center
