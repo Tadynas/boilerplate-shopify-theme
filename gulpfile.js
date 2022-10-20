@@ -15,12 +15,20 @@ gulp.task('clean', function(done){
     done()
 });
 
-gulp.task('assets', function() {
+gulp.task('sass', function() {
     return gulp.src('src/assets/styles/**/*.sass')
         .pipe(sass())
         .pipe(flatten())
         .pipe(gulp.dest('dist/assets'))
 });
+
+gulp.task('scripts', function() {
+    return gulp.src('src/assets/scripts/**/*.js')
+        .pipe(flatten())
+        .pipe(gulp.dest('dist/assets'))
+});
+
+gulp.task('assets', gulp.series('sass', 'scripts'));
 
 gulp.task('files', function() {
     return gulp.src(['src/.shopifyignore', 'src/**/*', '!src/assets/**/*'])
@@ -37,4 +45,5 @@ gulp.task('watch', function() {
     gulp.watch(['src/**/*', '!src/assets/**/*'], gulp.series('files'));
 })
 
+// gulp.task('dev', gulp.series('clean', 'assets', 'files'))
 gulp.task('dev', gulp.series('clean', 'assets', 'files', 'serve', 'watch'))
