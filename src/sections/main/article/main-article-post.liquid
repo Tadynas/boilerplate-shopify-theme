@@ -1,10 +1,10 @@
 {% schema %}
   {
-    "name": "Blog Post",
+    "name": "t:sections.main.blog.post.name",
     "blocks": [
       {
-        "type": "featured-image",
-        "name": "Featured Image",
+        "type": "featured_image",
+        "name": "t:sections.main.blog.post.blocks.featured_image.name",
         "settings": [
           {
             "type": "select",
@@ -34,17 +34,17 @@
       },
       {
         "type": "title",
-        "name": "Title",
+        "name": "t:sections.main.blog.post.blocks.title.name",
         "settings": [
           {
             "type": "checkbox",
             "id": "show_date",
-            "label": "Show Date"
+            "label": "t:sections.main.blog.settings.show_date.label"
           },
           {
             "type": "checkbox",
             "id": "show_author",
-            "label": "Show Author"
+            "label": "t:sections.main.blog.settings.show_author.label"
           }
         ]
       },
@@ -91,7 +91,7 @@
       },
       {
         "type": "content",
-        "name": "Content"
+        "name": "t:sections.main.blog.post.blocks.content.name"
       }
     ]
   }
