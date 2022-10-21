@@ -1,0 +1,16 @@
+.slideshow
+
+  &__controls
+    @include flex($center: true)
+
+  &__pagination
+    width: auto !important
+
+  &__button-prev, &__button-next
+    padding: .8rem 3.2rem
+    .icon-arrow
+      width: 1.6rem
+  
+  &__button-prev
+    .icon-arrow
+      transform: rotate(180deg)
