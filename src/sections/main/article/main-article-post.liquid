@@ -1,0 +1,98 @@
+{% schema %}
+  {
+    "name": "Blog Post",
+    "blocks": [
+      {
+        "type": "featured-image",
+        "name": "Featured Image",
+        "settings": [
+          {
+            "type": "select",
+            "id": "height",
+            "default": "default",
+            "label": "t:sections.global.element.image.settings.height.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:sections.global.size.default.label"
+              },
+              {
+                "value": "small",
+                "label": "t:sections.global.size.small.label"
+              },
+              {
+                "value": "medium",
+                "label": "t:sections.global.size.medium.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.global.size.large.label"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "title",
+        "name": "Title",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_date",
+            "label": "Show Date"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_author",
+            "label": "Show Author"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "t:sections.global.text.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "t:sections.global.text.name"
+          },
+          {
+            "type": "select",
+            "id": "text_size",
+            "default": "medium",
+            "label": "t:sections.global.size.text.label",
+            "options": [
+              {
+                "value": "small",
+                "label": "t:sections.global.size.small.label"
+              },
+              {
+                "value": "medium",
+                "label": "t:sections.global.size.medium.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.global.size.large.label"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.global.element.button.settings.link.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "click_to_share",
+            "label": "t:sections.main.product_information.blocks.heading.settings.click_to_share.label"
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name": "Content"
+      }
+    ]
+  }
+{% endschema %}
