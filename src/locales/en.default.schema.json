@@ -34,6 +34,9 @@
         "menu": {
           "label": "Navigation Menu"
         },
+        "items": {
+          "label": "Items"
+        },
         "image": {
           "label": "Image",
           "settings": {
@@ -562,6 +565,41 @@
         "settings": {
           "collection_card": {
             "content": "Collection Card"
+          }
+        }
+      },
+      "blog": {
+        "grid": {
+          "name": "Blog Grid",
+          "settings": {
+            "grid_card": {
+              "content": "Grid Card"
+            },
+            "show_featured_image": {
+              "label": "Show Featured Image"
+            }
+          }
+        },
+        "post": {
+          "name": "Blog Post",
+          "blocks": {
+            "featured_image": {
+              "name": "Featured Image"
+            },
+            "title": {
+              "name": "Title"
+            },
+            "content": {
+              "name": "Content"
+            }
+          }
+        },
+        "settings": {
+          "show_date": {
+            "label": "Show Date"
+          },
+          "show_author": {
+            "label": "Show Author"
           }
         }
       }
