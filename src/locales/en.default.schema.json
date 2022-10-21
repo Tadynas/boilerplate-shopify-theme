@@ -34,6 +34,9 @@
         "menu": {
           "label": "Navigation Menu"
         },
+        "items": {
+          "label": "Items"
+        },
         "image": {
           "label": "Image",
           "settings": {
