@@ -1,11 +1,37 @@
 <section class="slideshow">
   <div class="container">
+    <div class="swiper slideshow__swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          
+
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'slide' %}
+                
+                {% if block.settings.image != blank %}
+                  {% render 'comp-image', 
+                    image: block.settings.image,
+                    image_width: nil
+                  %}
+                {% else %}
+                  {{ 'lifestyle-2' | placeholder_svg_tag }}
+                {% endif %}
     
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    
+      <div class="swiper-scrollbar"></div>
+    </div>
   </div>
 </section>
 
-
-{% comment %} lifestyle-2 {% endcomment %}
 {% schema %}
   {
     "name": "t:sections.presets.slideshow.name",
