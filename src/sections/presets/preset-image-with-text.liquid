@@ -5,13 +5,11 @@
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'heading' %}
-              {% if block.settings.text %}
-                {% render 'comp-heading', 
-                  text: block.settings.text,
-                  size: block.settings.text_size
-                  shopify_attributes: block.shopify_attributes
-                %}
-              {% endif %}
+              {% render 'comp-heading', 
+                text: block.settings.text,
+                size: block.settings.text_size
+                shopify_attributes: block.shopify_attributes
+              %}
             {% when 'content' %}
               {% render 'comp-content', 
                 text: block.settings.text,

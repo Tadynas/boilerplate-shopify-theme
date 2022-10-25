@@ -22,7 +22,7 @@
       </div>
     {% endif %}
 
-    <div class="banner__images__content banner__images__content--{{ section.settings.content_alignment }}-align banner__images__content--{{ section.settings.content_position }}-position">
+    <div class="banner__images__content banner__images__content--{{ section.settings.content_alignment }}-align box--{{ section.settings.content_position }}-position">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'heading' %}
@@ -46,15 +46,15 @@
           {% case block.type %}
             {% when 'button' %}
               {% if block.settings.fill %}
-                {% assign bannerButtonClassName = "button--white" %}
+                {% assign bannerButtonClassName = "button button--white" %}
               {% else %}
-                {% assign bannerButtonClassName = "button--white-outline" %}
+                {% assign bannerButtonClassName = "button button--white-outline" %}
               {% endif %}
 
               {% render 'comp-button', 
                 label: block.settings.label,
                 link: block.settings.link,
-                className: "button {{ bannerButtonClassName }}",
+                className: bannerButtonClassName,
                 shopify_attributes: block.shopify_attributes
               %}
             {% endcase %}
