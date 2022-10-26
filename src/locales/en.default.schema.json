@@ -602,6 +602,17 @@
             "label": "Show Author"
           }
         }
+      },
+      "search": {
+        "input_field": {
+          "name": "Input Field"
+        },
+        "product_results": {
+          "name": "Product Results"
+        },
+        "blog_results": {
+          "name": "Blog Results"
+        }
       }
     }
   },

@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "search-input-field": {
+      "type": "main-search-input-field"
+    },
+    "search-product-results": {
+      "type": "main-search-product-results"
+    },
+    "search-blog-results": {
+      "type": "main-search-blog-results"
+    }
+  },
+  "order": ["search-input-field", "search-product-results", "search-blog-results"]
+}

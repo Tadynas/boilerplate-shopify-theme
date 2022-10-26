@@ -1,0 +1,105 @@
+{% schema %}
+  {
+    "name": "t:sections.main.search.product_results.name",
+    "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 5,
+        "max": 25,
+        "step": 1,
+        "default": 16,
+        "label": "t:sections.main.collection_product_grid.settings.products_per_page.label"
+      },
+      {
+        "type": "range",
+        "id": "number_of_columns",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 4,
+        "label": "t:sections.main.collection_product_grid.settings.number_of_columns.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.main.collection_product_grid.settings.product_card.content"
+      },
+      {
+        "type": "select",
+        "id": "image_ratio",
+        "default": "default",
+        "label": "t:sections.global.ratio.image.label",
+        "options": [
+          {
+            "value": "default",
+            "label": "t:sections.global.ratio.default.label"
+          },
+          {
+            "value": "portrait",
+            "label": "t:sections.global.ratio.portrait.label"
+          },
+          {
+            "value": "square",
+            "label": "t:sections.global.ratio.square.label"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_second_image_on_hover",
+        "label": "t:sections.main.collection_product_grid.settings.show_second_image_on_hover.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "t:sections.main.collection_product_grid.settings.show_vendor.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.main.collection_product_grid.settings.filtering.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_filtering",
+        "default": true,
+        "label": "t:sections.main.collection_product_grid.settings.enable_filtering.label"
+      },
+      {
+        "type": "select",
+        "id": "filter_layout",
+        "default": "horizontal",
+        "label": "t:sections.main.collection_product_grid.settings.filter_layout.label",
+        "options": [
+          {
+            "value": "horizontal",
+            "label": "t:sections.main.collection_product_grid.settings.filter_layout.options.horizontal.label"
+          },
+          {
+            "value": "vertical",
+            "label": "t:sections.main.collection_product_grid.settings.filter_layout.options.vertical.label"
+          },
+          {
+            "value": "drawer",
+            "label": "t:sections.main.collection_product_grid.settings.filter_layout.options.drawer.label"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "t:sections.main.collection_product_grid.settings.sorting.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sorting",
+        "default": true,
+        "label": "t:sections.main.collection_product_grid.settings.enable_sorting.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_count",
+        "default": true,
+        "label": "t:sections.main.collection_product_grid.settings.show_product_count.label"
+      }
+    ]
+  }
+{% endschema %}
