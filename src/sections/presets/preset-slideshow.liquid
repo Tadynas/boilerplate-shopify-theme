@@ -1,11 +1,112 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script type='module' src="{{ 'vendor-swiper.js' | asset_url }}"></script>
+
 <section class="slideshow">
   <div class="container">
+    <div class="swiper slideshow__swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'slide' %}
+
+            <div class="swiper-slide">
+              <div class="slideshow__swiper__card slideshow__swiper__card--{{ section.settings.height }}">
+                <div class="slideshow__swiper__card__overlay" style="opacity: {{ block.settings.overlay_opacity }}%"></div>
+
+                {% if block.settings.image != blank %}
+                  {% render 'comp-image', 
+                    image: block.settings.image,
+                    image_width: nil
+                  %}
+                {% else %}
+                  {{ 'lifestyle-2' | placeholder_svg_tag }}
+                {% endif %}
+                
+                <div class="slideshow__swiper__card__content box--{{ block.settings.content_position }}-position">
+                  
+
+                  {% render 'comp-heading', 
+                    text: block.settings.heading,
+                    size: block.settings.heading_size
+                    shopify_attributes: block.shopify_attributes
+                  %}
+
+                  {% render 'comp-content', 
+                    text: block.settings.content,
+                    shopify_attributes: block.shopify_attributes
+                  %}
+
+                  {% if block.settings.button_fill %}
+                    {% assign bannerButtonClassName = "button button--black" %}
+                  {% else %}
+                    {% assign bannerButtonClassName = "button button--black-outline" %}
+                  {% endif %}
+
+                  {% render 'comp-button', 
+                    label: block.settings.button_label,
+                    link: block.settings.button_link,
+                    className: bannerButtonClassName,
+                    shopify_attributes: block.shopify_attributes
+                  %}
+                </div>
+              </div>
+            </div>
+
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
     
+    <div class="slideshow__controls">
+      <div class="slideshow__button-prev">{% render "icon-arrow" %}</div>
+
+      <div class="slideshow__pagination"></div>
+
+      <div class="slideshow__button-next">{% render "icon-arrow" %}</div>
+    </div>
   </div>
 </section>
 
+<script>
+  let slideshowPagination = {{ section.settings.pagination_style | json }}
+  let slideshowAutoplay = {{ section.settings.enable_autoplay | json }}
+  let slideshowAutoplayDelay = {{ section.settings.delay | json }}
 
-{% comment %} lifestyle-2 {% endcomment %}
+  let custom
+  let type
+  if (slideshowPagination === "custom") {
+    custom = function (index, className) {
+      return '<span class="swiper-pagination-custom ' + className + '">' + (index + 1) + "</span>"
+    }
+    type = "bullets"
+  } else { 
+    custom = null 
+    type = slideshowPagination
+  }
+
+  const swiper = new Swiper('.slideshow__swiper', {
+    navigation: {
+      nextEl: '.slideshow__button-next',
+      prevEl: '.slideshow__button-prev',
+    },
+    pagination: {
+      el: '.slideshow__pagination',
+      type: type,
+      clickable: true,
+      renderBullet: custom
+    },
+    autoplay: slideshowAutoplay,
+    delay: slideshowAutoplayDelay * 1000,
+    loop: true
+  })
+</script>
+
 {% schema %}
   {
     "name": "t:sections.presets.slideshow.name",
@@ -37,20 +138,20 @@
       {
         "type": "select",
         "id": "pagination_style",
-        "default": "dots",
+        "default": "bullets",
         "label": "t:sections.presets.slideshow.settings.pagination_style.label",
         "options": [
           {
-            "value": "dots",
-            "label": "t:sections.presets.slideshow.settings.pagination_style.options.dots.label"
+            "value": "bullets",
+            "label": "t:sections.presets.slideshow.settings.pagination_style.options.bullets.label"
           },
           {
-            "value": "numbers",
-            "label": "t:sections.presets.slideshow.settings.pagination_style.options.numbers.label"
+            "value": "custom",
+            "label": "t:sections.presets.slideshow.settings.pagination_style.options.custom.label"
           },
           {
-            "value": "counter",
-            "label": "t:sections.presets.slideshow.settings.pagination_style.options.counter.label"
+            "value": "fraction",
+            "label": "t:sections.presets.slideshow.settings.pagination_style.options.fraction.label"
           }
         ]
       },

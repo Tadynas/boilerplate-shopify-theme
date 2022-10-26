@@ -364,14 +364,14 @@
           "pagination_style": {
             "label": "Pagination Style",
             "options": {
-              "dots": {
-                "label": "Dots"
+              "bullets": {
+                "label": "Bullets"
               },
-              "numbers": {
+              "custom": {
                 "label": "Numbers"
               },
-              "counter": {
-                "label": "Counter"
+              "fraction": {
+                "label": "Fraction"
               }
             }
           },
