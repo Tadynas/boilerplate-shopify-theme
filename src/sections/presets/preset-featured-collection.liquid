@@ -1,0 +1,133 @@
+{% schema %}
+  {
+    "name": "t:sections.presets.featured_collection.name",
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "t:sections.global.text.heading.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "default": "Shop Now",
+            "label": "t:sections.global.text.name"
+          },
+          {
+            "type": "select",
+            "id": "text_size",
+            "default": "medium",
+            "label": "t:sections.global.size.text.label",
+            "options": [
+              {
+                "value": "small",
+                "label": "t:sections.global.size.small.label"
+              },
+              {
+                "value": "medium",
+                "label": "t:sections.global.size.medium.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.global.size.large.label"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name": "t:sections.global.text.content.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "default": "<p>Only today! Get best deals by purchasing from our new collection</p>",
+            "label": "t:sections.global.text.name"
+          }
+        ]
+      },
+      {
+        "type": "collection_grid",
+        "name": "t:sections.presets.featured_collection.blocks.collection_grid.name",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "t:sections.presets.featured_collection.blocks.collection_grid.settings.collection.label"
+          },
+          {
+            "type": "range",
+            "id": "products_to_show",
+            "min": 2,
+            "max": 12,
+            "step": 1,
+            "default": 4,
+            "label": "t:sections.presets.featured_collection.blocks.collection_grid.settings.products_to_show.label"
+          },
+          {
+            "type": "range",
+            "id": "number_of_columns",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 4,
+            "label": "t:sections.main.collection_product_grid.settings.number_of_columns.label"
+          },
+          {
+            "type": "header",
+            "content": "t:sections.main.collection_product_grid.settings.product_card.content"
+          },
+          {
+            "type": "select",
+            "id": "image_ratio",
+            "default": "default",
+            "label": "t:sections.global.ratio.image.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:sections.global.ratio.default.label"
+              },
+              {
+                "value": "portrait",
+                "label": "t:sections.global.ratio.portrait.label"
+              },
+              {
+                "value": "square",
+                "label": "t:sections.global.ratio.square.label"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "show_second_image_on_hover",
+            "label": "t:sections.main.collection_product_grid.settings.show_second_image_on_hover.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_vendor",
+            "label": "t:sections.main.collection_product_grid.settings.show_vendor.label"
+          }
+        ],
+        "limit": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.presets.featured_collection.name",
+        "blocks": [
+          {
+            "type": "heading"
+          },
+          {
+            "type": "content"
+          },
+          {
+            "type": "collection_grid"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
