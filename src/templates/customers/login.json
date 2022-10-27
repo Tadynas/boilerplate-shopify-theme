@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "customer-login": {
+      "type": "customer-login"
+    }
+  },
+  "order": ["customer-login"]
+}
