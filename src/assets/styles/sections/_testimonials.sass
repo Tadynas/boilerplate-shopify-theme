@@ -1,0 +1,43 @@
+.testimonials
+
+  .container
+    & > .title
+      margin-bottom: .8rem
+    & > .content
+      margin-bottom: 1.6rem
+  
+  &__rating
+    margin-bottom: 4rem
+    .icon-star
+      width: 1.6rem
+
+  &__swiper
+    margin-bottom: 2.4rem
+    .swiper-slide
+      height: auto
+
+    &__card
+      @include flex($dir: column, $center: true, $rowGap: 8)
+      border: .1rem solid $black
+      padding: 3.2rem 1.6rem
+      height: 100%
+
+      &__author
+        @include flex($center: true, $colGap: 16)
+        padding-top: 2.4rem
+        &__image
+          width: 6.4rem
+          height: 6.4rem
+          overflow: hidden
+          margin: 0 auto
+          img, svg
+            border: .1rem solid $black
+    
+  &__button-prev, &__button-next
+    padding: .8rem 3.2rem
+    .icon-arrow
+      width: 1.6rem
+  
+  &__button-prev
+    .icon-arrow
+      transform: rotate(180deg)
