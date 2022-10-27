@@ -346,6 +346,11 @@
       },
       "email_signup": {
         "name": "Email Signup",
+        "settings": {
+          "background_image": {
+            "label": "Background Image"
+          }
+        },
         "blocks": {
           "email_form": {
             "name": "Email Form"
