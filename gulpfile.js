@@ -24,9 +24,14 @@ gulp.task('scripts', function() {
 gulp.task('assets', gulp.series('styles', 'scripts'));
 
 gulp.task('files', function() {
-    return gulp.src(['src/.shopifyignore', 'src/**/*', '!src/assets/**/*'])
+    return gulp.src(['src/.shopifyignore', 'src/**/*', '!src/assets/**/*', '!src/templates/**/*'])
         .pipe(flatten({ includeParents: 1}))
         .pipe(gulp.dest('dist'))
+});
+
+gulp.task('templates', function() {
+    return gulp.src('src/templates/**/*')
+        .pipe(gulp.dest('dist/templates'))
 });
 
 gulp.task('serve', function() {
@@ -36,7 +41,9 @@ gulp.task('serve', function() {
 gulp.task('watch', function() {
     gulp.watch('src/assets/styles/**/*', gulp.series('styles'));
     gulp.watch('src/assets/scripts/**/*', gulp.series('scripts'));
-    gulp.watch(['src/**/*', '!src/assets/**/*'], gulp.series('files'));
+    gulp.watch(['src/**/*', '!src/assets/**/*', '!src/templates/**/*'], gulp.series('files'));
+    gulp.watch('src/templates/**/*', gulp.series('templates'));
 })
 
-gulp.task('dev', gulp.series('clean', 'assets', 'files', 'serve', 'watch'))
+gulp.task('dev', gulp.series('clean', 'assets', 'files', 'templates', 'serve', 'watch'))
+// gulp.task('dev', gulp.series('clean', 'assets', 'files', 'templates'))
