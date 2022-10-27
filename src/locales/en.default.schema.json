@@ -470,6 +470,22 @@
             }
           }
         }
+      },
+      "featured_collection": {
+        "name": "Featured Collection",
+        "blocks": {
+          "collection_grid": {
+            "name": "Collection Grid",
+            "settings": {
+              "collection": {
+                "label": "Collection"
+              },
+              "products_to_show": {
+                "label": "Maximum Products to Show"
+              }
+            }
+          }
+        }
       }
     },
     "main": {
