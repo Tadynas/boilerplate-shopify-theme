@@ -1,3 +1,7 @@
+{{ 'section-video.css' | asset_url | stylesheet_tag }}
+
+<script type='module' src="{{ 'video.js' | asset_url }}"></script>
+
 <section class="video">
   <div class="container">
     {% render 'comp-heading', 
@@ -7,7 +11,7 @@
 
     <div class="video__wrapper">
       {% if section.settings.cover_image != blank %}
-        <button class="video__placeholder js-video-placeholder" role="button">
+        <button class="video__placeholder show js-video-placeholder" role="button">
           {% if section.settings.cover_image != blank %}
             {% render 'comp-image', 
               image: section.settings.cover_image,

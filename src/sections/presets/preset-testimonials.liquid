@@ -1,3 +1,6 @@
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+{{ 'vendors-swiper.css' | asset_url | stylesheet_tag }}
+
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -81,7 +84,7 @@
       </div>
     </div>
     
-    <div class="slideshow__controls">
+    <div class="testimonials__controls">
       <div class="testimonials__button-prev">{% render "icon-arrow" %}</div>
 
       <div class="testimonials__button-next">{% render "icon-arrow" %}</div>

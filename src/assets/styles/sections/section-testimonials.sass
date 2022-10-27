@@ -1,3 +1,6 @@
+@import ../base/_mixins
+@import ../base/_variables
+  
 .testimonials
 
   .container
@@ -32,6 +35,9 @@
           margin: 0 auto
           img, svg
             border: .1rem solid $black
+
+  &__controls
+    @include flex($center: true)
     
   &__button-prev, &__button-next
     padding: .8rem 3.2rem
