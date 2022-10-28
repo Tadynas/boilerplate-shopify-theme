@@ -1,0 +1,138 @@
+{% schema %}
+  {
+    "name": "t:sections.presets.blog_posts.name",
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "t:sections.global.text.heading.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "default": "Shop Now",
+            "label": "t:sections.global.text.name"
+          },
+          {
+            "type": "select",
+            "id": "text_size",
+            "default": "medium",
+            "label": "t:sections.global.size.text.label",
+            "options": [
+              {
+                "value": "small",
+                "label": "t:sections.global.size.small.label"
+              },
+              {
+                "value": "medium",
+                "label": "t:sections.global.size.medium.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.global.size.large.label"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "content",
+        "name": "t:sections.global.text.content.label",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "default": "<p>Only today! Get best deals by purchasing from our new collection</p>",
+            "label": "t:sections.global.text.name"
+          }
+        ]
+      },
+      {
+        "type": "blog_grid",
+        "name": "t:sections.main.blog.grid.name",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "t:sections.main.blog.name"
+          },
+          {
+            "type": "range",
+            "id": "blog_posts_to_show",
+            "min": 2,
+            "max": 6,
+            "step": 1,
+            "default": 3,
+            "label": "t:sections.main.blog.grid.settings.blog_posts_to_show.label"
+          },
+          {
+            "type": "range",
+            "id": "number_of_columns",
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "default": 3,
+            "label": "t:sections.main.collection_product_grid.settings.number_of_columns.label"
+          },
+          {
+            "type": "header",
+            "content": "t:sections.main.blog.grid.settings.grid_card.content"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_featured_image",
+            "label": "t:sections.main.blog.grid.settings.show_featured_image.label"
+          },
+          {
+            "type": "select",
+            "id": "height",
+            "default": "medium",
+            "label": "t:sections.global.element.image.settings.height.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:sections.global.size.default.label"
+              },
+              {
+                "value": "medium",
+                "label": "t:sections.global.size.medium.label"
+              },
+              {
+                "value": "large",
+                "label": "t:sections.global.size.large.label"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "show_date",
+            "label": "t:sections.main.blog.settings.show_date.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_author",
+            "label": "t:sections.main.blog.settings.show_author.label"
+          }
+        ],
+        "limit": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.presets.blog_posts.name",
+        "blocks": [
+          {
+            "type": "heading"
+          },
+          {
+            "type": "content"
+          },
+          {
+            "type": "blog_grid"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

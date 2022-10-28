@@ -481,7 +481,7 @@
                 "label": "Collection"
               },
               "products_to_show": {
-                "label": "Maximum Products to Show"
+                "label": "Number of Products to Show"
               }
             }
           }
@@ -494,6 +494,9 @@
             "name": "Product"
           }
         }
+      },
+      "blog_posts": {
+        "name": "Blog Posts"
       }
     },
     "main": {
@@ -598,9 +601,16 @@
         }
       },
       "blog": {
+        "name": "Blog",
         "grid": {
           "name": "Blog Grid",
           "settings": {
+            "posts_per_page": {
+              "label": "Posts Per Page"
+            },
+            "blog_posts_to_show": {
+              "label": "Number of Blog Posts to Show"
+            },
             "grid_card": {
               "content": "Grid Card"
             },
