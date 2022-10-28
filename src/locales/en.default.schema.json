@@ -486,6 +486,14 @@
             }
           }
         }
+      },
+      "collage": {
+        "name": "Collage",
+        "blocks": {
+          "product": {
+            "name": "Product"
+          }
+        }
       }
     },
     "main": {

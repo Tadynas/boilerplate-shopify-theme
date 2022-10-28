@@ -1,0 +1,78 @@
+{% schema %}
+  {
+    "name": "t:sections.presets.collage.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "t:sections.global.text.heading.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "default": "medium",
+        "label": "t:sections.global.size.heading.label",
+        "options": [
+          {
+            "value": "small",
+            "label": "t:sections.global.size.small.label"
+          },
+          {
+            "value": "medium",
+            "label": "t:sections.global.size.medium.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.global.size.large.label"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "t:sections.presets.featured_collection.blocks.collection_grid.settings.collection.label",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "t:sections.presets.featured_collection.blocks.collection_grid.settings.collection.label"
+          }
+        ]
+      },
+      {
+        "type": "product",
+        "name": "t:sections.presets.collage.blocks.product.name",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "t:sections.presets.collage.blocks.product.name"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_second_image_on_hover",
+            "label": "t:sections.main.collection_product_grid.settings.show_second_image_on_hover.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.presets.collage.name",
+        "blocks": [
+          {
+            "type": "collection"
+          },
+          {
+            "type": "product"
+          },
+          {
+            "type": "product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
