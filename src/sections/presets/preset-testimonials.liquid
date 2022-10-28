@@ -1,3 +1,97 @@
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+{{ 'vendors-swiper.css' | asset_url | stylesheet_tag }}
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script type='module' src="{{ 'testimonial.js' | asset_url }}"></script>
+
+<section class="testimonials">
+  <div class="container">
+
+    {% render 'comp-heading', 
+      text: section.settings.heading,
+      size: section.settings.heading_size
+    %}
+
+    {% render 'comp-content', 
+      text: section.settings.content
+    %}
+    
+    {% if section.settings.rating != 0 %}
+      <div class="testimonials__rating">
+        {% for i in (1..section.settings.rating) %}
+          {% render 'icon-star' %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="swiper testimonials__swiper"
+      data-autoplay="{{ section.settings.enable_autoplay }}"
+      data-delay="{{ section.settings.delay }}"
+    >
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'review' %}
+
+            <div class="swiper-slide">
+              <div class="testimonials__swiper__card">
+
+                {% render 'comp-subheading', 
+                  text: block.settings.heading,
+                  size: "default",
+                  shopify_attributes: block.shopify_attributes
+                %}
+
+                {% render 'comp-content', 
+                  text: block.settings.content,
+                  shopify_attributes: block.shopify_attributes
+                %}
+                
+                <div class="testimonials__swiper__card__author">
+                  <div class="testimonials__swiper__card__author__image">
+                    {% if block.settings.author_image != blank %}
+                      {% render 'comp-image', 
+                        image: block.settings.author_image,
+                        image_width: nil
+                      %}
+                    {% else %}
+                      {{ 'product-4' | placeholder_svg_tag }}
+                    {% endif %}
+                  </div>
+                  
+                  <div>
+                    {% render 'comp-text', 
+                      text: block.settings.author_name,
+                      size: "smaller"
+                    %}
+                    {% render 'comp-text', 
+                      text: block.settings.author_description,
+                      size: "smaller"
+                    %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="testimonials__controls">
+      <div class="testimonials__button-prev">{% render "icon-arrow" %}</div>
+
+      <div class="testimonials__button-next">{% render "icon-arrow" %}</div>
+    </div>
+  </div>
+</section>
+
 {% schema %}
   {
     "name": "t:sections.presets.testimonials.name",

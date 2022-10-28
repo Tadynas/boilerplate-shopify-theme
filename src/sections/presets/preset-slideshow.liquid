@@ -1,3 +1,7 @@
+{{ 'section-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'vendors-swiper.css' | asset_url | stylesheet_tag }}
+{{ 'components-box.css' | asset_url | stylesheet_tag }}
+
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -5,11 +9,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-<script type='module' src="{{ 'vendor-swiper.js' | asset_url }}"></script>
+<script type='module' src="{{ 'slideshow.js' | asset_url }}"></script>
 
 <section class="slideshow">
   <div class="container">
-    <div class="swiper slideshow__swiper">
+    <div class="swiper slideshow__swiper" 
+      data-pagination="{{ section.settings.pagination_style }}"
+      data-autoplay="{{ section.settings.enable_autoplay }}"
+      data-delay="{{ section.settings.delay }}"
+    >
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
           {% case block.type %}
@@ -72,40 +80,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  let slideshowPagination = {{ section.settings.pagination_style | json }}
-  let slideshowAutoplay = {{ section.settings.enable_autoplay | json }}
-  let slideshowAutoplayDelay = {{ section.settings.delay | json }}
-
-  let custom
-  let type
-  if (slideshowPagination === "custom") {
-    custom = function (index, className) {
-      return '<span class="swiper-pagination-custom ' + className + '">' + (index + 1) + "</span>"
-    }
-    type = "bullets"
-  } else { 
-    custom = null 
-    type = slideshowPagination
-  }
-
-  const swiper = new Swiper('.slideshow__swiper', {
-    navigation: {
-      nextEl: '.slideshow__button-next',
-      prevEl: '.slideshow__button-prev',
-    },
-    pagination: {
-      el: '.slideshow__pagination',
-      type: type,
-      clickable: true,
-      renderBullet: custom
-    },
-    autoplay: slideshowAutoplay,
-    delay: slideshowAutoplayDelay * 1000,
-    loop: true
-  })
-</script>
 
 {% schema %}
   {

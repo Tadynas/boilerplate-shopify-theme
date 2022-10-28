@@ -8,6 +8,12 @@ body
   @include desktop
     @include fontSize(16)
 
+p, span
+  &.smaller
+    @include fontSize(12)
+    @include desktop
+      @include fontSize(14)
+
 h1
   @include fontSize(32)
   &.h1--small
