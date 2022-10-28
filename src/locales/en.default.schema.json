@@ -497,6 +497,9 @@
       },
       "blog_posts": {
         "name": "Blog Posts"
+      },
+      "collections": {
+        "name": "Collections"
       }
     },
     "main": {
