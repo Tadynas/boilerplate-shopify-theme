@@ -1,11 +1,12 @@
 {{ 'components-header.css' | asset_url | stylesheet_tag }}
 {{ 'components-burger-menu.css' | asset_url | stylesheet_tag }}
 
-<header class="header header--{{ section.settings.logo_position }}">
+<header x-data="{ burgerMenuOpen: false, searchBarOpen: false }" class="header header--{{ section.settings.logo_position }}">
   <div class="container container--visible"> 
     <div class="header__container">
+
       <!-- Store Logo/Name-->
-      <div class="header__image">
+      <a href="{{ routes.root_url }}" class="header__image">
         {% if section.settings.logo_image != blank %}
           {% render 'comp-image', 
             image: section.settings.logo_image,
@@ -14,24 +15,70 @@
           {% else %}
             <h3>{{ shop.name }}</h3>
         {% endif %}
-      </div>
-    <!-- Navigation -->
-      <nav class="header__nav">
+      </a>
+
+      <!-- Navigation -->
+      <nav class="header__nav">  
         {% for link in section.settings.menu.links %}
-          <a href="{{ link.url }}">{{ link.title }}</a>
+          {% if link.links != blank %}
+            {% assign link_handle = link.handle | replace: '-', '_' %}
+            <div x-data="{ {{ link_handle }}: false }" @mouseleave="{{ link_handle }} = false">
+              <a href="{{ link.url }}" @mouseover="{{ link_handle }} = true">
+                {{ link.title }}
+                {% render "icon-dropdown" %}
+              </a>
+              {% for childLink in link.links %}
+                <ul x-show="{{ link_handle }}" x-cloak>
+                  <li>
+                    <a href="{{ childLink.url }}">{{ childLink.title }}</a>
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
+          {% else %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endif %}
         {% endfor %}
       </nav>
 
       <div class="header__actions">
-        <div>Search</div>
-        <div>Cart</div>
+        <button x-on:click="searchBarOpen = true">Search</button>
+        <a href="{{ routes.cart_url }}">Cart</a>
       </div>
 
-      <div class="burger-menu">
+      <div x-show="searchBarOpen">
+        <input type="text">
+        <button x-on:click="searchBarOpen = false">X</button>
+      </div>
+
+      <div x-on:click="burgerMenuOpen = !burgerMenuOpen" class="burger-menu">
         <div class="burger-menu__line"></div>
         <div class="burger-menu__line"></div>
         <div class="burger-menu__line"></div>
       </div>
+    </div>
+
+    <div x-show="burgerMenuOpen" x-cloak>
+      {% for link in section.settings.menu.links %}
+        {% if link.links != blank %}
+          {% assign link_handle = link.handle | replace: '-', '_' %}
+          <div x-data="{ {{ link_handle }}: false }">
+            <button x-on:click="{{ link_handle }} = !{{ link_handle }}">
+              {{ link.title }}
+              {% render "icon-dropdown" %}
+            </button>
+            {% for childLink in link.links %}
+              <ul x-show="{{ link_handle }}" x-cloak>
+                <li>
+                  <a href="{{ childLink.url }}">{{ childLink.title }}</a>
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+        {% else %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </header>
