@@ -25,9 +25,11 @@
                     <div role="button">+</div>
                   </div>
                 {% endif %}
-                {% render 'comp-content', 
-                  text: block.settings.content
-                %}
+                <div x-show="showContent">
+                  {% render 'comp-content', 
+                    text: block.settings.content
+                  %}
+                </div>
               </div>
           {% endcase %}
         {% endfor %}
