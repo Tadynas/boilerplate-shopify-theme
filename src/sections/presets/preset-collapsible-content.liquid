@@ -13,15 +13,12 @@
           {% case block.type %}
             {% when 'collapsible_row' %}
 
-              {% if forloop.first %}
-                {% if section.settings.open_first_row %}
-                  {% assign collapsibleRowClassName = "collapsible__row__box--first-show" %}
-                {% endif %}
-              {% else %}
-                {% assign collapsibleRowClassName = "" %}
+              {% assign showContent = false %}
+              {% if forloop.first and section.settings.open_first_row %}
+                {% assign showContent = true %}
               {% endif %}
 
-              <div class="collapsible__row__box {{ collapsibleRowClassName }}">
+              <div x-data="{ showContent: {{ showContent }} }" x-on:click="showContent = !showContent" class="collapsible__row__box">
                 {% if block.settings.heading %}
                   <div class="collapsible__row__box__title">
                     <h4>{{block.settings.heading}}</h4>

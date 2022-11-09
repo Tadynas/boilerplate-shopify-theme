@@ -21,14 +21,14 @@
       <nav class="header__nav">  
         {% for link in section.settings.menu.links %}
           {% if link.links != blank %}
-            {% assign link_handle = link.handle | replace: '-', '_' %}
-            <div x-data="{ {{ link_handle }}: false }" @mouseleave="{{ link_handle }} = false">
-              <a href="{{ link.url }}" @mouseover="{{ link_handle }} = true">
+            {% assign linkHandle = link.handle | replace: '-', '_' %}
+            <div x-data="{ {{ linkHandle }}: false }" @mouseleave="{{ linkHandle }} = false">
+              <a href="{{ link.url }}" @mouseover="{{ linkHandle }} = true">
                 {{ link.title }}
                 {% render "icon-dropdown" %}
               </a>
               {% for childLink in link.links %}
-                <ul x-show="{{ link_handle }}" x-cloak>
+                <ul x-show="{{ linkHandle }}" x-cloak>
                   <li>
                     <a href="{{ childLink.url }}">{{ childLink.title }}</a>
                   </li>
@@ -46,7 +46,7 @@
         <a href="{{ routes.cart_url }}">Cart</a>
       </div>
 
-      <div x-show="searchBarOpen">
+      <div x-show="searchBarOpen" x-cloak>
         <input type="text">
         <button x-on:click="searchBarOpen = false">X</button>
       </div>
@@ -61,14 +61,14 @@
     <div x-show="burgerMenuOpen" x-cloak>
       {% for link in section.settings.menu.links %}
         {% if link.links != blank %}
-          {% assign link_handle = link.handle | replace: '-', '_' %}
-          <div x-data="{ {{ link_handle }}: false }">
-            <button x-on:click="{{ link_handle }} = !{{ link_handle }}">
+          {% assign linkHandle = link.handle | replace: '-', '_' %}
+          <div x-data="{ {{ linkHandle }}: false }">
+            <button x-on:click="{{ linkHandle }} = !{{ linkHandle }}">
               {{ link.title }}
               {% render "icon-dropdown" %}
             </button>
             {% for childLink in link.links %}
-              <ul x-show="{{ link_handle }}" x-cloak>
+              <ul x-show="{{ linkHandle }}" x-cloak>
                 <li>
                   <a href="{{ childLink.url }}">{{ childLink.title }}</a>
                 </li>
